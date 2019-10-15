@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Resources;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Tamalito
 {
@@ -33,9 +34,30 @@ namespace Tamalito
 
         private void Ventana_Loaded(object sender, RoutedEventArgs e)
         {
+            //Traer todos los productos de la BD y guardarlos en una lista:
+            try{
+                SqlConnection con = Conexion.conectar();
+                SqlCommand cmd = new SqlCommand(String.Format("select * from alumno where nombre like '%{0}%'", nombre), con);
+                SqlDataReader rd = cmd.ExecuteReader();
+
+                List<Producto> lis = new List<Producto>();
+                Producto prod = null;
+
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    prod = new Producto();
+                    prod.claveUnica = rd.GetInt16(0);
+                    lis.Add(prod);
+
+                }
+                con.Close();
+            }catch (Exception ex){
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            
             int n = 10;
             grid.Columns = 4;
-
             if (n % 4 != 0)
                 grid.Rows = (n / 4) + 1;
             else
