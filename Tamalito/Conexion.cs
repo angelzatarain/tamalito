@@ -20,11 +20,8 @@ namespace Tamalito
             SqlConnection cnn;
             try
             {
-<<<<<<< HEAD
                 cnn = new SqlConnection("Data Source=112SALAS19;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
-=======
-                cnn = new SqlConnection("Data Source=112SALAS18;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
->>>>>>> 8b4650c2f98a7204a2a5f31d2ad1fa66c8ab1fde
+
                 cnn.Open();
             }
             catch (Exception ex)

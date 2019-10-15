@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tamalito"
         mc:Ignorable="d"
-        Title="TomarOrden" Height="325" Width="405">
+        Title="TomarOrden" Height="450" Width="800">
     <Grid x:Name="ventana" Loaded="Ventana_Loaded">
-        <Button x:Name="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="225,202,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="83,202,0,0" VerticalAlignment="Top" Width="75">
+        <Button x:Name="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="409,363,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="307,363,0,0" VerticalAlignment="Top" Width="75">
         </Button>
-        <UniformGrid x:Name="grid" HorizontalAlignment="Left" Height="100" Margin="128,62,0,0" VerticalAlignment="Top" Width="100"/>
+        <UniformGrid x:Name="grid" HorizontalAlignment="Left" Height="174" Margin="101,18,0,0" VerticalAlignment="Top" Width="594"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="140" Margin="101,205,0,0" VerticalAlignment="Top" Width="594"/>
 
     </Grid>
-    </Window>
+</Window>

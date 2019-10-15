@@ -8,14 +8,14 @@ namespace Tamalito
 {
     class Producto
     {
-        private int IdProducto { get; set; }
-        private int costo { get; set; }
-        private int inventario { get; set; }
-        private String nombre { get; set; }
-        private String descripcion { get; set; }
-        private String categoria { get; set; }
-        private String urlImagen { get; set; }
-        private int tiempoPreparacion { get; set; }
+        public int IdProducto { get; set; }
+        public int costo { get; set; }
+        public int inventario { get; set; }
+        public String nombre { get; set; }
+        public String descripcion { get; set; }
+        public String categoria { get; set; }
+        public String urlImagen { get; set; }
+        public int tiempoPreparacion { get; set; }
 
     }
 }

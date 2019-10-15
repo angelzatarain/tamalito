@@ -44,7 +44,7 @@ nombre VARCHAR(30),
 descripcion VARCHAR(270),
 categoria VARCHAR(30),
 tiempoPreparacion INTEGER,
-urlImage VARCHAR(30)
+urlImagen VARCHAR(30)
 );
 
 CREATE TABLE pedidosProductos(
