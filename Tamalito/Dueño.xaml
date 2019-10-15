@@ -1,0 +1,19 @@
+﻿<Window x:Class="Tamalito.Dueño"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tamalito"
+        mc:Ignorable="d"
+        Title="Dueño" Height="380" Width="420">
+    <Grid>
+        <Button x:Name="btTomarOrden" Content="Tomar Orden" HorizontalAlignment="Left" Margin="47,39,0,0" VerticalAlignment="Top" Width="314" Height="30" Click="BtTomarOrden_Click"/>
+        <Button x:Name="btAltaEmpleado" Content="Alta Empleado" HorizontalAlignment="Left" Margin="47,98,0,0" VerticalAlignment="Top" Width="130" Height="30" Click="BtAltaEmpleado_Click"/>
+        <Button x:Name="btBajaEmpleado" Content="Baja Empleado" HorizontalAlignment="Left" Margin="47,161,0,0" VerticalAlignment="Top" Width="130" Height="30" Click="BtBajaEmpleado_Click"/>
+        <Button x:Name="btPromoverEmpleado" Content="Promover Empleado" HorizontalAlignment="Left" Margin="231,98,0,0" VerticalAlignment="Top" Width="130" Height="30" Click="BtPromoverEmpleado_Click"/>
+        <Button x:Name="btAniadirInventario" Content="Añadir Inventario" HorizontalAlignment="Left" Margin="231,161,0,0" VerticalAlignment="Top" Width="130" Height="30" Click="BtAniadirInventario_Click"/>
+        <Button x:Name="btCerrarSesion" Content="Cerrar Sesion" HorizontalAlignment="Left" Margin="47,286,0,0" VerticalAlignment="Top" Width="314" Height="30" Click="BtCerrarSesion_Click"/>
+        <Button x:Name="btModificarCostos" Content="Modificar Costos" HorizontalAlignment="Left" Margin="47,224,0,0" VerticalAlignment="Top" Width="130" Height="30" Click="BtModificarCostos_Click"/>
+        <Button x:Name="btConsultarVentas" Content="Consultar Ventas" HorizontalAlignment="Left" Margin="231,224,0,0" VerticalAlignment="Top" Width="130" Height="30" Click="BtConsultarVentas_Click"/>
+    </Grid>
+</Window>

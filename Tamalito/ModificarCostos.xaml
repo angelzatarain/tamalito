@@ -1,0 +1,22 @@
+﻿<Window x:Class="Tamalito.ModificarCostos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tamalito"
+        mc:Ignorable="d"
+        Title="ModificarCostos" Height="325" Width="405">
+    <Grid>
+        <Label x:Name="lbIdProducto" Content="Id Producto" HorizontalAlignment="Left" Margin="43,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbNombre" Content="Nombre" HorizontalAlignment="Left" Margin="43,87,0,0" VerticalAlignment="Top" Width="76"/>
+        <TextBox x:Name="tbIdProducto" HorizontalAlignment="Left" Height="23" Margin="180,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="180,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <Label x:Name="lbNuevoPrecio" Content="Nuevo Precio" HorizontalAlignment="Left" Margin="43,174,0,0" VerticalAlignment="Top" Width="91"/>
+        <TextBox x:Name="tbNuevoPrecio" HorizontalAlignment="Left" Height="26" Margin="180,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="43,228,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btContinuar" Content="Continuar" HorizontalAlignment="Left" Margin="265,228,0,0" VerticalAlignment="Top" Width="75" Click="BtContinuar_Click"/>
+        <Label x:Name="lbPrecioActual" Content="Precio Actual" HorizontalAlignment="Left" Margin="43,133,0,0" VerticalAlignment="Top" Width="84"/>
+        <Button x:Name="btConsultar" Content="Consultar" HorizontalAlignment="Left" Margin="153,228,0,0" VerticalAlignment="Top" Width="75" Click="BtConsultar_Click"/>
+        <Label x:Name="lbPrecioActual1" Content="" HorizontalAlignment="Left" Margin="180,133,0,0" VerticalAlignment="Top" Width="160" BorderBrush="Black"/>
+    </Grid>
+</Window>

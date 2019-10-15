@@ -1,0 +1,14 @@
+﻿<Window x:Class="Tamalito.Empleado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tamalito"
+        mc:Ignorable="d"
+        Title="Empleado"  Height="194" Width="280">
+    <Grid>
+        <Button x:Name="btTomarOrden" Content="Tomar Orden" HorizontalAlignment="Left" Margin="46,37,0,0" VerticalAlignment="Top" Width="170" Height="30" Click="BtTomarOrden_Click"/>
+        <Button x:Name="btCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="46,95,0,0" VerticalAlignment="Top" Width="170" Height="30" Click="BtCerrarSesion_Click"/>
+
+    </Grid>
+</Window>

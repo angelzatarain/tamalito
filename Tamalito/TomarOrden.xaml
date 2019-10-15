@@ -1,0 +1,16 @@
+﻿<Window x:Class="Tamalito.TomarOrden"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tamalito"
+        mc:Ignorable="d"
+        Title="TomarOrden" Height="325" Width="405">
+    <Grid x:Name="ventana" Loaded="Ventana_Loaded">
+        <Button x:Name="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="225,202,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="83,202,0,0" VerticalAlignment="Top" Width="75">
+        </Button>
+        <UniformGrid x:Name="grid" HorizontalAlignment="Left" Height="100" Margin="128,62,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+    </Window>

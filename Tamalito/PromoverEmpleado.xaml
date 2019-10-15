@@ -1,0 +1,23 @@
+﻿<Window x:Class="Tamalito.PromoverEmpleado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tamalito"
+        mc:Ignorable="d"
+        Title="PromoverEmpleado" Height="360" Width="410">
+    <Grid>
+        <Label x:Name="lbIdEmpleado" Content="Id Empleado" HorizontalAlignment="Left" Margin="43,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbNombre" Content="Nombre" HorizontalAlignment="Left" Margin="43,87,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label x:Name="lbApellidoPaterno" Content="Apellido Paterno" HorizontalAlignment="Left" Margin="43,126,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbApellidoMaterno" Content="Apellido Materno&#xD;&#xA;" HorizontalAlignment="Left" Margin="43,167,0,0" VerticalAlignment="Top" Width="109" Height="26"/>
+        <TextBox x:Name="tbIdEmpleado" HorizontalAlignment="Left" Height="23" Margin="180,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="180,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="tbApellidoPaterno" HorizontalAlignment="Left" Height="23" Margin="180,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="tbApellidoMaterno" HorizontalAlignment="Left" Height="23" Margin="180,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <Label x:Name="lbPuesto" Content="Puesto" HorizontalAlignment="Left" Margin="43,211,0,0" VerticalAlignment="Top" Width="76"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="66,266,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btContinuar" Content="Continuar" HorizontalAlignment="Left" Margin="230,266,0,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox HorizontalAlignment="Left" Margin="180,211,0,0" VerticalAlignment="Top" Width="160" Height="26"/>
+    </Grid>
+</Window>
