@@ -81,6 +81,8 @@
     <Compile Include="ModificarCostos.xaml.cs">
       <DependentUpon>ModificarCostos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pedido.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="PromoverEmpleado.xaml.cs">
       <DependentUpon>PromoverEmpleado.xaml</DependentUpon>
     </Compile>
