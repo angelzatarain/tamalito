@@ -20,6 +20,7 @@ namespace Tamalito
     /// </summary>
     public partial class IniciarSesion : Window
     {
+        
         public IniciarSesion()
         {
             InitializeComponent();
@@ -50,6 +51,7 @@ namespace Tamalito
                     {
                         if (rd.GetString(0).Equals("Empleado"))
                         {
+                            App.Current.Properties["usuarioActivo"]= "Empleado";
                             Empleado w = new Empleado();
                             w.Show();
                             this.Close();
@@ -58,6 +60,7 @@ namespace Tamalito
                         {
                             if (rd.GetString(0).Equals("Gerente"))
                             {
+                                App.Current.Properties["usuarioActivo"] = "Gerente";
                                 Gerente w = new Gerente();
                                 w.Show();
                                 this.Close();
@@ -66,6 +69,7 @@ namespace Tamalito
                             {
                                 if (rd.GetString(0).Equals("Dueño"))
                                 {
+                                    App.Current.Properties["usuarioActivo"] = "Dueño";
                                     Dueño w = new Dueño();
                                     w.Show();
                                     this.Close();

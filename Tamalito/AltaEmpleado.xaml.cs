@@ -67,5 +67,20 @@ namespace Tamalito
             for (i = 1; i <32; i++)
                 cbDia.Items.Add(i);
         }
+
+        private void BtCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.Properties["usuarioActivo"].Equals("Gerente")) {
+                    Gerente main = new Gerente();
+                    main.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Dueño main = new Dueño();
+                    main.Show();
+                    this.Close();
+                }
+        }
     }
 }

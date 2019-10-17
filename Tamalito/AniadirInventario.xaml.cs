@@ -66,5 +66,21 @@ namespace Tamalito
                 MessageBox.Show("Error try catch");
             }
         }
+
+        private void BtCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.Properties["usuarioActivo"].Equals("Gerente"))
+            {
+                Gerente main = new Gerente();
+                main.Show();
+                this.Close();
+            }
+            else
+            {
+                Dueño main = new Dueño();
+                main.Show();
+                this.Close();
+            }
+        }
     }
 }

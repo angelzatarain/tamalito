@@ -97,7 +97,26 @@ namespace Tamalito
             }
         }
 
-       
+        private void BtCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.Properties["usuarioActivo"].Equals("Empleado")) {
+                Empleado main = new Empleado();
+                main.Show();
+                this.Close();
+            }
+            else{
+                if (App.Current.Properties["usuarioActivo"].Equals("Gerente")) {
+                    Gerente main = new Gerente();
+                    main.Show();
+                    this.Close();
+                }
+                else {
+                    Dueño main = new Dueño();
+                    main.Show();
+                    this.Close();
+                }
+            }
+        }
     }
 
 

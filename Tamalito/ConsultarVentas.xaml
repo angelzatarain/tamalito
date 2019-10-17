@@ -10,7 +10,7 @@
         <Label Content="Producto: " HorizontalAlignment="Left" Margin="45,38,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="114,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <DataGrid HorizontalAlignment="Left" Height="149" Margin="45,95,0,0" VerticalAlignment="Top" Width="308"/>
-        <Button Content="Consultar" HorizontalAlignment="Left" Margin="278,41,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Consultar" HorizontalAlignment="Left" Margin="278,41,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Button Content="Regresar" HorizontalAlignment="Left" Margin="256,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
