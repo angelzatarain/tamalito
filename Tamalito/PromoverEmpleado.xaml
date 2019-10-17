@@ -16,7 +16,7 @@
         <TextBox x:Name="tbApellidoPaterno" HorizontalAlignment="Left" Height="23" Margin="180,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <TextBox x:Name="tbApellidoMaterno" HorizontalAlignment="Left" Height="23" Margin="180,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <Label x:Name="lbPuesto" Content="Puesto" HorizontalAlignment="Left" Margin="43,211,0,0" VerticalAlignment="Top" Width="76"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="66,266,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="66,266,0,0" VerticalAlignment="Top" Width="75" Click="BtCancelar_Click"/>
         <Button x:Name="btContinuar" Content="Continuar" HorizontalAlignment="Left" Margin="230,266,0,0" VerticalAlignment="Top" Width="75"/>
         <ComboBox HorizontalAlignment="Left" Margin="180,211,0,0" VerticalAlignment="Top" Width="160" Height="26"/>
     </Grid>

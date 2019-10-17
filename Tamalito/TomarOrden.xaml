@@ -8,7 +8,7 @@
         Title="TomarOrden" Height="450" Width="800">
     <Grid x:Name="ventana" Loaded="Ventana_Loaded">
         <Button x:Name="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="409,363,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="307,363,0,0" VerticalAlignment="Top" Width="75">
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="307,363,0,0" VerticalAlignment="Top" Width="75" Click="BtCancelar_Click">
         </Button>
         <UniformGrid x:Name="grid" HorizontalAlignment="Left" Height="174" Margin="101,18,0,0" VerticalAlignment="Top" Width="594"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="140" Margin="101,205,0,0" VerticalAlignment="Top" Width="594"/>

@@ -30,6 +30,10 @@ namespace Tamalito
             dueño = new Dueño();
             dueño.Show();
             this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
 
         }
     }

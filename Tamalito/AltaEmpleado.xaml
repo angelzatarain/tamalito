@@ -50,7 +50,7 @@
             <ComboBoxItem>Empleado</ComboBoxItem>
         </ComboBox>
         <Button x:Name="btAlta" Content="Dar de Alta" HorizontalAlignment="Left" Margin="214,399,0,0" VerticalAlignment="Top" Width="232" Height="39" Click="BtAlta_Click"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="62,399,0,0" VerticalAlignment="Top" Width="94" Height="39"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="62,399,0,0" VerticalAlignment="Top" Width="94" Height="39" Click="BtCancelar_Click"/>
 
     </Grid>
 </Window>
