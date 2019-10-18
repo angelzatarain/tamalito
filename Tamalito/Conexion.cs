@@ -20,7 +20,7 @@ namespace Tamalito
             SqlConnection cnn;
             try
             {
-                cnn = new SqlConnection("Data Source=112SALAS23;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+                cnn = new SqlConnection("Data Source=112SALAS28;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
 
                 cnn.Open();
             }
@@ -75,9 +75,8 @@ namespace Tamalito
                 con = Conexion.conectar();
                 SqlCommand cmd = new SqlCommand(String.Format("select activo from empleados where idEmpleado= {0}", usuario), con);
                 rd = cmd.ExecuteReader();
-                if (rd.Read())
-                    if (rd.GetByte(0).Equals("1"))
-                        res = true;
+                if (rd.Read() && rd.GetByte(0).Equals(1))
+                    res = true;
                 con.Close();
                 rd.Close();
             }
