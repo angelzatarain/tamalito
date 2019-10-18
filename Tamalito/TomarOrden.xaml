@@ -5,13 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tamalito"
         mc:Ignorable="d"
-        Title="TomarOrden" Height="450" Width="800">
-    <Grid x:Name="ventana" Loaded="Ventana_Loaded">
-        <Button x:Name="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="409,363,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="307,363,0,0" VerticalAlignment="Top" Width="75" Click="BtCancelar_Click">
+        Title="TomarOrden" Height="750" Width="800">
+    <Grid x:Name="ventana" RenderTransformOrigin="0.497,0.498" Loaded="Ventana_Loaded">
+        <Button x:Name="btCancelar" Content="Confirmar compra " HorizontalAlignment="Left" Margin="410,647,0,0" VerticalAlignment="Top" Width="152" Height="40" FontSize="16" FontWeight="Bold">
         </Button>
-        <UniformGrid x:Name="grid" HorizontalAlignment="Left" Height="174" Margin="101,18,0,0" VerticalAlignment="Top" Width="594"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="140" Margin="101,205,0,0" VerticalAlignment="Top" Width="594"/>
-
+        <Button x:Name="btVerde" Content="" HorizontalAlignment="Left" Margin="89,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtVerde_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/productos/tamales/verde.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btConfirmar" Content="Regresar" HorizontalAlignment="Left" Margin="228,647,0,0" VerticalAlignment="Top" Width="82" Click="BtCancelar_Click" Height="40" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btRojo" Content="" HorizontalAlignment="Left" Margin="247,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtRojo_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/productos/tamales/rojo.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btMole" Content="" HorizontalAlignment="Left" Margin="408,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtMole_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/productos/tamales/mole.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btDulce" Content="" HorizontalAlignment="Left" Margin="575,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="images/productos/tamales/dulce.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btArroz" Content="" HorizontalAlignment="Left" Margin="93,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="images/productos/atole/arroz.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btVainilla" Content="" HorizontalAlignment="Left" Margin="249,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="images/productos/atole/vainilla.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btFresa" Content="" HorizontalAlignment="Left" Margin="412,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtFresa_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="images/productos/atole/fresa.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btChocolate" Content="" HorizontalAlignment="Left" Margin="579,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="images/productos/atole/chocolate.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lbPrecioArroz" Content="$12" HorizontalAlignment="Left" Margin="139,250,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lbPrecioVainilla" Content="$12" HorizontalAlignment="Left" Margin="293,250,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lbPrecioFresa" Content="$12" HorizontalAlignment="Left" Margin="452,250,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lbPrecioChocolate" Content="$12" HorizontalAlignment="Left" Margin="623,250,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lbPrecioVerde" Content="$15" HorizontalAlignment="Left" Margin="133,17,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lbPrecioRojo" Content="$15" HorizontalAlignment="Left" Margin="287,17,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lbPrecioMole" Content="$15" HorizontalAlignment="Left" Margin="446,17,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lbPrecioDulce" Content="$15" HorizontalAlignment="Left" Margin="617,17,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
+        <ComboBox x:Name="cbVerde" HorizontalAlignment="Left" Margin="127,184,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbRojo" HorizontalAlignment="Left" Margin="287,184,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbMole" HorizontalAlignment="Left" Margin="442,184,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" RenderTransformOrigin="0.427,0.5"/>
+        <ComboBox x:Name="cbDulce" HorizontalAlignment="Left" Margin="615,184,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbArroz" HorizontalAlignment="Left" Margin="127,423,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbVainilla" HorizontalAlignment="Left" Margin="287,423,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbFresa" HorizontalAlignment="Left" Margin="442,423,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" RenderTransformOrigin="0.427,0.5"/>
+        <ComboBox x:Name="cbChocolate" HorizontalAlignment="Left" Margin="615,423,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="402,625,0,-6" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="tbRecibo" HorizontalAlignment="Left" Margin="93,518,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="102" Width="591"/>
     </Grid>
 </Window>

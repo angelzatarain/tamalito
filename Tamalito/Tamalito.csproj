@@ -87,6 +87,11 @@
     <Compile Include="PromoverEmpleado.xaml.cs">
       <DependentUpon>PromoverEmpleado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TomarOrden.xaml.cs">
       <DependentUpon>TomarOrden.xaml</DependentUpon>
     </Compile>
@@ -154,11 +159,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -166,8 +166,8 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,16 +178,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\productos\verde.jpg" />
+    <Resource Include="images\productos\atole\arroz.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\productos\rojo.jpg" />
+    <Resource Include="images\productos\atole\chocolate.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\productos\mole.jpg" />
+    <Resource Include="images\productos\atole\fresa.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\productos\dulce.jpg" />
+    <Resource Include="images\productos\atole\vainilla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\productos\tamales\dulce.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\productos\tamales\mole.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\productos\tamales\rojo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\productos\tamales\verde.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

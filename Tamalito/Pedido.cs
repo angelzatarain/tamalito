@@ -14,6 +14,10 @@ namespace Tamalito
         private String fecha { get; set; }
         private String hora { get; set; }
 
+        public Pedido()
+        {
+
+        }
         public Pedido(int idPedido, string fecha, string hora)
         {
             IdPedido = idPedido;

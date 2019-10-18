@@ -46,7 +46,7 @@ nombre VARCHAR(30),
 descripcion VARCHAR(270),
 categoria VARCHAR(30),
 tiempoPreparacion INTEGER,
-urlImagen VARCHAR(30)
+urlImagen VARCHAR(50)
 );
 
 CREATE TABLE pedidosProductos(
@@ -77,17 +77,32 @@ INSERT INTO clientes(idCliente, numTarjeta, correo, nombre, apellidoP, apellidoM
 INSERT INTO clientes(idCliente, numTarjeta, correo, nombre, apellidoP, apellidoM) VALUES(3, '55999988', 'cliente3@gmail.com', 'Luis', 'Casas', 'Bonitas');
 
 --PRODUCTOS--
+--TAMALES--
 INSERT INTO productos(idProducto, costo, inventario, nombre, descripcion, categoria, tiempoPreparacion, urlImagen) 
-VALUES(1, 15, 20, 'verde', 'Delicioso tamal verde', 'tamal', 30, './images/productos/verde.jpg');
+VALUES(1, 15, 20, 'verde', 'Delicioso tamal verde', 'tamal', 30, './images/productos/tamales/verde.jpg');
 
 INSERT INTO productos(idProducto, costo, inventario, nombre, descripcion, categoria, tiempoPreparacion, urlImagen) 
-VALUES(2, 15, 20, 'rojo', 'Delicioso tamal rojo', 'tamal', 30, './images/productos/rojo.jpg');
+VALUES(2, 15, 20, 'rojo', 'Delicioso tamal rojo', 'tamal', 30, './images/productos/tamales/rojo.jpg');
 
 INSERT INTO productos(idProducto, costo, inventario, nombre, descripcion, categoria, tiempoPreparacion, urlImagen) 
-VALUES(3, 15, 20, 'mole', 'Delicioso tamal mole', 'tamal', 30, './images/productos/mole.jpg');
+VALUES(3, 15, 20, 'mole', 'Delicioso tamal mole', 'tamal', 30, './images/productos/tamales/mole.jpg');
 
 INSERT INTO productos(idProducto, costo, inventario, nombre, descripcion, categoria, tiempoPreparacion, urlImagen) 
-VALUES(4, 15, 20, 'dulce', 'Delicioso tamal dulce', 'tamal', 30, './images/productos/dulce.jpg');
+VALUES(4, 15, 20, 'dulce', 'Delicioso tamal dulce', 'tamal', 30, './images/productos/tamales/dulce.jpg');
+
+--ATOLES--
+INSERT INTO productos(idProducto, costo, inventario, nombre, descripcion, categoria, tiempoPreparacion, urlImagen) 
+VALUES(5, 12, 30, 'arroz', 'Delicioso atole de arroz', 'atole', 20, './images/productos/atoles/verde.jpg');
+
+INSERT INTO productos(idProducto, costo, inventario, nombre, descripcion, categoria, tiempoPreparacion, urlImagen) 
+VALUES(6, 12, 30, 'vainilla', 'Delicioso atole de vainilla', 'atole', 20, './images/productos/atoles/rojo.jpg');
+
+INSERT INTO productos(idProducto, costo, inventario, nombre, descripcion, categoria, tiempoPreparacion, urlImagen) 
+VALUES(7, 12, 30, 'fresa', 'Delicioso atole de fresa', 'atole', 20, './images/productos/atoles/mole.jpg');
+
+INSERT INTO productos(idProducto, costo, inventario, nombre, descripcion, categoria, tiempoPreparacion, urlImagen) 
+VALUES(8, 12, 30, 'chocolate', 'Delicioso atole de chocolate', 'atole', 20, './images/productos/atoles/dulce.jpg');
+
 
 --PEDIDOS--
 INSERT INTO pedidos(idPedido, fecha, hora, idCliente, idEmpleado) VALUES(1, '2019-11-03', '00:00', 1,1);
