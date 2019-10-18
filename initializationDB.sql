@@ -12,7 +12,8 @@ fechaNac DATE,
 sexo CHAR(1) NOT NULL,
 direccion VARCHAR(40),
 puesto VARCHAR(20) NOT NULL,
-contrasenia VARCHAR(16) NOT NULL
+contrasenia VARCHAR(16) NOT NULL,
+activo TINYINT NOT NULL
 );
 
 CREATE TABLE telefonos(
@@ -57,14 +58,14 @@ cantidad INTEGER --cantidad de ese producto
 ---------------------------------------------------INITIALIZE VALUES----------------------------------------------------
 
 --EMPLEADOS--
-INSERT INTO empleados(idEmpleado, nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia) 
-VALUES(1, 'Angel', 'Zatarain', 'López', '1999-03-11', 'H', 'Cancún', 'Gerente', '1');
+INSERT INTO empleados(idEmpleado, nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia,activo) 
+VALUES(1, 'Angel', 'Zatarain', 'López', '1999-03-11', 'H', 'Cancún', 'Gerente', '1', 1);
 
-INSERT INTO empleados(idEmpleado, nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia) 
-VALUES(2, 'José', 'Cortés', 'Gasca', '2019-12-10', 'H', 'CDMX', 'Gerente', '2');
+INSERT INTO empleados(idEmpleado, nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia,activo) 
+VALUES(2, 'José', 'Cortés', 'Gasca', '2019-12-10', 'H', 'CDMX', 'Gerente', '2', 1);
 
-INSERT INTO empleados(idEmpleado, nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia) 
-VALUES(3, 'Diego', 'Hernández', 'Delgado', '2019-11-10', 'H', 'EUA', 'Dueño', '3');
+INSERT INTO empleados(idEmpleado, nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia, activo) 
+VALUES(3, 'Diego', 'Hernández', 'Delgado', '2019-11-10', 'H', 'EUA', 'Dueño', '3',1);
 
 INSERT INTO telefonos(idEmpleado, telefono) VALUES(1, 55543267);
 INSERT INTO telefonos(idEmpleado, telefono) VALUES(2, 55549999);

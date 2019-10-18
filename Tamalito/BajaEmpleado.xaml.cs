@@ -39,5 +39,41 @@ namespace Tamalito
                 this.Close();
             }
         }
+
+        private void BtContinuar_Click(object sender, RoutedEventArgs e)
+        {
+            try {
+                Empleados empleado = new Empleados();
+                int res = empleado.eliminar(int.Parse(tbIdEmpleado.Text), tbNombre.Text, tbApellidoPaterno.Text, tbApellidoMaterno.Text);
+                if (res < 0)
+                    MessageBox.Show("empleado no encontrado");
+                else
+                    MessageBox.Show("se dió de baja al empleado");
+                if (App.Current.Properties["idUsuarioActivo"].Equals(tbIdEmpleado.Text))
+                {
+                    MainWindow main = new MainWindow();
+                    main.Show();
+                    this.Close();
+                }
+                else
+                {
+                    if (App.Current.Properties["usuarioActivo"].Equals("Gerente"))
+                    {
+                        Gerente main = new Gerente();
+                        main.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Dueño main = new Dueño();
+                        main.Show();
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception) {
+                MessageBox.Show("Error");
+            }
+        }
     }
 }

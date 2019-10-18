@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows;
 
 namespace Tamalito
 {
@@ -54,15 +55,39 @@ namespace Tamalito
 
         public int eliminar(int idEmpleado, String nombre, String apellidoP, String apellidoM)
         {
-            int res = 0;
-            SqlConnection con;
-            con = Conexion.conectar();
-
-            SqlCommand cmd = new SqlCommand(String.Format("delete from empleados where idEmpleado = {0} and nombre = '{1}' and apellidoP = '{2}' and apellidoM = '{3}'", idEmpleado, apellidoP, apellidoM), con);
-            res = cmd.ExecuteNonQuery();
-            con.Close();
-
-            return res;
+            try
+            {
+                int res = 0;
+                SqlConnection con;
+                con = Conexion.conectar();
+                SqlCommand cmd1 = new SqlCommand(String.Format("select empleados.nombre, empleados.apellidoP, empleados.apellidoM from empleados where empleados.idEmpleado={0}", idEmpleado), con);
+                SqlDataReader rd = cmd1.ExecuteReader();
+                //Para validar datos
+                if (rd.HasRows)
+                {
+                    rd.Read();
+                    if (rd.GetString(0).Equals(nombre) && rd.GetString(1).Equals(apellidoP) && rd.GetString(2).Equals(apellidoM))
+                    {
+                        //Se validaron los datos, ahora podemos dar de baja al empleado
+                        rd.Close();
+                        SqlCommand cmd2 = new SqlCommand(String.Format("update empleados set activo={0} where empleados.idEmpleado={1}", 0, idEmpleado), con);
+                        res = cmd2.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    else
+                    {
+                        res = -1;
+                    }
+                }
+                return res;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+                return -1;
+            }
+            
+            
         }
 
     }

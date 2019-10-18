@@ -40,49 +40,56 @@ namespace Tamalito
             try
             {
                 idEm = int.Parse(tbUsuario.Text);
-                if (Conexion.comprabarPwd(idEm, tbContra.Text))
+                if (Conexion.comprobarEmpleo(idEm))
                 {
-                    SqlConnection con;
-                    SqlDataReader rd;
-                    con = Conexion.conectar();
-                    SqlCommand cmd = new SqlCommand(String.Format("select puesto from empleados where idEmpleado= {0} and contrasenia = '{1}'", idEm, tbContra.Text), con);
-                    rd = cmd.ExecuteReader();
-                    if (rd.Read())
+                    if (Conexion.comprabarPwd(idEm, tbContra.Text))
                     {
-                        if (rd.GetString(0).Equals("Empleado"))
+                        SqlConnection con;
+                        SqlDataReader rd;
+                        con = Conexion.conectar();
+                        SqlCommand cmd = new SqlCommand(String.Format("select puesto from empleados where idEmpleado= {0} and contrasenia = '{1}'", idEm, tbContra.Text), con);
+                        rd = cmd.ExecuteReader();
+                        App.Current.Properties["idUsuarioActivo"] = tbUsuario.Text;
+                        if (rd.Read())
                         {
-                            App.Current.Properties["usuarioActivo"]= "Empleado";
-                            Empleado w = new Empleado();
-                            w.Show();
-                            this.Close();
-                        }
-                        else
-                        {
-                            if (rd.GetString(0).Equals("Gerente"))
+                            if (rd.GetString(0).Equals("Empleado"))
                             {
-                                App.Current.Properties["usuarioActivo"] = "Gerente";
-                                Gerente w = new Gerente();
+                                App.Current.Properties["usuarioActivo"] = "Empleado";
+                                Empleado w = new Empleado();
                                 w.Show();
                                 this.Close();
                             }
                             else
                             {
-                                if (rd.GetString(0).Equals("Dueño"))
+                                if (rd.GetString(0).Equals("Gerente"))
                                 {
-                                    App.Current.Properties["usuarioActivo"] = "Dueño";
-                                    Dueño w = new Dueño();
+                                    App.Current.Properties["usuarioActivo"] = "Gerente";
+                                    Gerente w = new Gerente();
                                     w.Show();
                                     this.Close();
                                 }
+                                else
+                                {
+                                    if (rd.GetString(0).Equals("Dueño"))
+                                    {
+                                        App.Current.Properties["usuarioActivo"] = "Dueño";
+                                        Dueño w = new Dueño();
+                                        w.Show();
+                                        this.Close();
+                                    }
+                                }
                             }
-                        }
 
+                        }
+                        con.Close();
+                        rd.Close();
                     }
-                    con.Close();
-                    rd.Close();
+                    else
+                        MessageBox.Show("contraseña incorrecta");
                 }
-                else
-                    MessageBox.Show("contraseña incorrecta");
+                else {
+                    MessageBox.Show("El empleado ya no trabaja aquí");
+                }
             }
             catch (Exception ex)
             {
