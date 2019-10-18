@@ -84,8 +84,8 @@
     </Compile>
     <Compile Include="Pedido.cs" />
     <Compile Include="Producto.cs" />
-    <Compile Include="PromoverEmpleado.xaml.cs">
-      <DependentUpon>PromoverEmpleado.xaml</DependentUpon>
+    <Compile Include="ModificarPuesto.xaml.cs">
+      <DependentUpon>ModificarPuesto.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -146,7 +146,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PromoverEmpleado.xaml">
+    <Page Include="ModificarPuesto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

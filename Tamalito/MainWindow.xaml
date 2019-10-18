@@ -8,7 +8,7 @@
         Title="Inicio" Height="300" Width="610">
     <Grid>
         <Label x:Name="lbBienvenida" Content="Bienvenido a Tamalito" HorizontalAlignment="Left" Margin="65,40,0,0" VerticalAlignment="Top" Width="480" FontSize="48"/>
-        <Button x:Name="lbInicioSesion" Content="Inciar Sesión" HorizontalAlignment="Left" Margin="210,174,0,0" VerticalAlignment="Top" Width="169" Height="45" Click="LbInicioSesion_Click"/>
+        <Button x:Name="btInicioSesion" Content="Inciar Sesión" HorizontalAlignment="Left" Margin="210,174,0,0" VerticalAlignment="Top" Width="169" Height="45" Click="BtInicioSesion_Click"/>
 
     </Grid>
 </Window>

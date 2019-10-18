@@ -9,12 +9,17 @@ Tamalito
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\App.xaml
 12-1732530341
+=======
+C:\Users\AZATARAIL\Desktop\tamalito\Tamalito\App.xaml
+12-1720413155
+>>>>>>> 541b3bec1a64130f74798e4e1d1e7f719b6394b1
 
-201655224846
+20-1842484416
 141183416626
-AltaEmpleado.xaml;AniadirInventario.xaml;BajaEmpleado.xaml;ConsultarVentas.xaml;Dueño.xaml;Empleado.xaml;Gerente.xaml;IniciarSesion.xaml;MainWindow.xaml;ModificarCostos.xaml;PromoverEmpleado.xaml;TomarOrden.xaml;
+AltaEmpleado.xaml;AniadirInventario.xaml;BajaEmpleado.xaml;ConsultarVentas.xaml;Dueño.xaml;Empleado.xaml;Gerente.xaml;IniciarSesion.xaml;MainWindow.xaml;ModificarCostos.xaml;ModificarPuesto.xaml;TomarOrden.xaml;
 
 False
 

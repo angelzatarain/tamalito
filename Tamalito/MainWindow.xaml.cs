@@ -25,13 +25,12 @@ namespace Tamalito
             InitializeComponent();
         }
 
-        private void LbInicioSesion_Click(object sender, RoutedEventArgs e)
+        private void BtInicioSesion_Click(object sender, RoutedEventArgs e)
         {
             IniciarSesion ini;
             ini = new IniciarSesion();
             ini.Show();
             this.Close();
-
         }
     }
 }

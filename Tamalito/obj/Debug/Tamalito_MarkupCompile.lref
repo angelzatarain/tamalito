@@ -1,5 +1,6 @@
 ﻿
 
+<<<<<<< HEAD
 FC:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\AltaEmpleado.xaml;;
 FC:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\AniadirInventario.xaml;;
 FC:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\BajaEmpleado.xaml;;
@@ -12,4 +13,18 @@ FC:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\MainWindow.xaml;;
 FC:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\ModificarCostos.xaml;;
 FC:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\PromoverEmpleado.xaml;;
 FC:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\TomarOrden.xaml;;
+=======
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\AltaEmpleado.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\AniadirInventario.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\BajaEmpleado.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\ConsultarVentas.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\Dueño.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\Empleado.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\Gerente.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\IniciarSesion.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\MainWindow.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\ModificarCostos.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\ModificarPuesto.xaml;;
+FC:\Users\AZATARAIL\Desktop\tamalito\Tamalito\TomarOrden.xaml;;
+>>>>>>> 541b3bec1a64130f74798e4e1d1e7f719b6394b1
 

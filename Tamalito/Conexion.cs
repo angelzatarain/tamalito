@@ -20,7 +20,11 @@ namespace Tamalito
             SqlConnection cnn;
             try
             {
+<<<<<<< HEAD
                 cnn = new SqlConnection("Data Source=112SALAS29;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+=======
+                cnn = new SqlConnection("Data Source=112SALAS28;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+>>>>>>> 541b3bec1a64130f74798e4e1d1e7f719b6394b1
 
                 cnn.Open();
             }
@@ -65,9 +69,9 @@ namespace Tamalito
 
         }
 
-        public static Boolean comprobarEmpleo(int usuario)
+        public static int comprobarEmpleo(int usuario)
         {
-            Boolean res = false;
+            int res = -1;
             SqlDataReader rd;
             SqlConnection con;
             try
@@ -77,7 +81,13 @@ namespace Tamalito
                 rd = cmd.ExecuteReader();
                 if (rd.Read())
                     if (rd.GetByte(0).Equals(1))
+<<<<<<< HEAD
                         res = true;
+=======
+                        res = 1;
+                    else
+                        res = 0;
+>>>>>>> 541b3bec1a64130f74798e4e1d1e7f719b6394b1
                 con.Close();
                 rd.Close();
             }
