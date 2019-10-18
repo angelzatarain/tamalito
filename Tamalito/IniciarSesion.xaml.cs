@@ -40,14 +40,15 @@ namespace Tamalito
             try
             {
                 idEm = int.Parse(tbUsuario.Text);
-                if (Conexion.comprobarEmpleo(idEm))
+                int res = Conexion.comprobarEmpleo(idEm);
+                if (res>0)
                 {
-                    if (Conexion.comprabarPwd(idEm, tbContra.Text))
+                    if (Conexion.comprabarPwd(idEm, pbContra.Password))
                     {
                         SqlConnection con;
                         SqlDataReader rd;
                         con = Conexion.conectar();
-                        SqlCommand cmd = new SqlCommand(String.Format("select puesto from empleados where idEmpleado= {0} and contrasenia = '{1}'", idEm, tbContra.Text), con);
+                        SqlCommand cmd = new SqlCommand(String.Format("select puesto from empleados where idEmpleado= {0} and contrasenia = '{1}'", idEm, pbContra.Password), con);
                         rd = cmd.ExecuteReader();
                         App.Current.Properties["idUsuarioActivo"] = tbUsuario.Text;
                         if (rd.Read())
@@ -88,7 +89,10 @@ namespace Tamalito
                         MessageBox.Show("contraseña incorrecta");
                 }
                 else {
-                    MessageBox.Show("El empleado ya no trabaja aquí");
+                    if(res<0)
+                        MessageBox.Show("El empleado no existe");
+                    else
+                        MessageBox.Show("El empleado ya no trabaja aquí");
                 }
             }
             catch (Exception ex)

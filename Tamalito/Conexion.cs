@@ -65,9 +65,9 @@ namespace Tamalito
 
         }
 
-        public static Boolean comprobarEmpleo(int usuario)
+        public static int comprobarEmpleo(int usuario)
         {
-            Boolean res = false;
+            int res = -1;
             SqlDataReader rd;
             SqlConnection con;
             try
@@ -75,8 +75,11 @@ namespace Tamalito
                 con = Conexion.conectar();
                 SqlCommand cmd = new SqlCommand(String.Format("select activo from empleados where idEmpleado= {0}", usuario), con);
                 rd = cmd.ExecuteReader();
-                if (rd.Read() && rd.GetByte(0).Equals(1))
-                    res = true;
+                if (rd.Read())
+                    if (rd.GetByte(0).Equals(1))
+                        res = 1;
+                    else
+                        res = 0;
                 con.Close();
                 rd.Close();
             }

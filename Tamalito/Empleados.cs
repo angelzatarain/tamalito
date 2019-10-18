@@ -58,7 +58,7 @@ namespace Tamalito
                 int res = -1;
                 SqlConnection con;
                 con = Conexion.conectar();
-                if (Conexion.comprobarEmpleo(idEmpleado)) {
+                if (Conexion.comprobarEmpleo(idEmpleado)>0) {
                     SqlCommand cmd1 = new SqlCommand(String.Format("select empleados.nombre, empleados.apellidoP, empleados.apellidoM from empleados where empleados.idEmpleado={0}", idEmpleado), con);
                     SqlDataReader rd = cmd1.ExecuteReader();
                     //Para validar datos
@@ -91,7 +91,7 @@ namespace Tamalito
                 int res = -1;
                 SqlConnection con;
                 con = Conexion.conectar();
-                if (Conexion.comprobarEmpleo(idEmpleado))
+                if (Conexion.comprobarEmpleo(idEmpleado)>0)
                 {
                     SqlCommand cmd1 = new SqlCommand(String.Format("select empleados.nombre, empleados.apellidoP, empleados.apellidoM from empleados where empleados.idEmpleado={0}", idEmpleado), con);
                     SqlDataReader rd = cmd1.ExecuteReader();
