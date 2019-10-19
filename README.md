@@ -1,4 +1,12 @@
 # tamalito
-DAI
 
-"Cuiden sus carteras o nosostros las cuidadmos por ustedes." El Ángel
+Proyeto1.- Aplicación de escritorio y aplicación web
+Materia: DAI (Desarrollo de aplicaciones informáticas) 
+Maestra: Ana Lidia Franzoni
+
+Equipo:
+-Ángel Zatarain
+-José Carlos
+-Digeo Hernández
+
+
