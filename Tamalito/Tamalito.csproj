@@ -90,6 +90,7 @@
     <Compile Include="TomarOrden.xaml.cs">
       <DependentUpon>TomarOrden.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Venta.cs" />
     <Page Include="AltaEmpleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

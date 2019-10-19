@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Tamalito
 {
@@ -35,7 +36,7 @@ namespace Tamalito
         private void CbAnio1_Loaded(object sender, RoutedEventArgs e)
         {
             int i;
-            for (i = 2019; i < 2020; i++)
+            for (i = 2000; i <= DateTime.Today.Year; i++)
                 cbAnio1.Items.Add(i);
         }
 
@@ -43,7 +44,7 @@ namespace Tamalito
         {
             int i;
             
-            for (i = 2019; i < 2020; i++)
+            for (i = 2000; i <= DateTime.Today.Year; i++)
                 cbAnio2.Items.Add(i);
         }
 
@@ -96,14 +97,64 @@ namespace Tamalito
         private void BtConsultar_Click(object sender, RoutedEventArgs e)
         {
             //Debemos ver que la fecha de inicio sea antes que la fecha final; de lo contrario mandar un menaje de error
-            StringBuilder fechaI = new StringBuilder();
-            StringBuilder fechaF = new StringBuilder();
-            fechaI.Append(cbAnio1.SelectedIndex.ToString()).Append(cbMes1.SelectedIndex.ToString()).Append(cbDia1.SelectedIndex.ToString());
-            fechaF.Append(cbAnio2.SelectedIndex.ToString()).Append(cbMes2.SelectedIndex.ToString()).Append(cbDia2.SelectedIndex.ToString());
+            //CambiosJC
+            Boolean res = false;
+            if ((cbAnio1.SelectedIndex + 2000) > (cbAnio2.SelectedIndex + 2000))
+                MessageBox.Show("Error en los años");
+            else
+                if ((cbAnio1.SelectedIndex + 2000) == (cbAnio2.SelectedIndex + 2000))
+                    if ((cbMes1.SelectedIndex + 1) > (cbAnio2.SelectedIndex + 1))
+                        MessageBox.Show("Error en los meses");
+                    else
+                        if ((cbMes1.SelectedIndex + 1) == (cbMes2.SelectedIndex + 1))
+                        {
+                            if ((cbDia1.SelectedIndex + 1) >= (cbDia2.SelectedIndex + 1))
+                                MessageBox.Show("Error en los días");
+                            else
+                                res = true;
+                        }
+                        else
+                            res = true;
+                else
+                    res = true;
+            
             //Comprobación de la fecha
-            if (fechaI.ToString().CompareTo(fechaF.ToString()) < 0)
+            if (res)
             {
-
+                String fechaIni, fechaFin;
+                fechaIni = "" + (cbAnio1.SelectedIndex + 2000) + "-" + (cbMes1.SelectedIndex + 1) + "-" + (cbDia1.SelectedIndex + 1) + "";
+                fechaFin = "" + (cbAnio2.SelectedIndex + 2000) + "-" + (cbMes2.SelectedIndex + 1) + "-" + (cbDia2.SelectedIndex + 1) + "";
+                try
+                {
+                    SqlConnection con = Conexion.conectar();
+                    SqlCommand cmd = new SqlCommand(String.Format("select pedidosProductos.idPedido, pedidosProductos.idProducto, pedidos.fecha, pedidosProductos.cantidad*productos.costo as Ganancia from productos," +
+                        " pedidosProductos, pedidos where productos.idProducto = pedidosProductos.idProducto and pedidosProductos.idPedido = pedidos.idPedido and fecha between '{0}' and '{1}'", fechaIni, fechaFin), con);
+                    SqlDataReader rd;
+                    rd = cmd.ExecuteReader();
+                    int total = 0;
+                    List<Venta> lis = new List<Venta>();
+                    int i = 1;
+                    while (rd.Read())
+                    {
+                        Venta ven;
+                        ven = new Venta();
+                        ven.numPed = rd.GetInt32(0);
+                        ven.numProd = rd.GetInt32(1);
+                        ven.fechaPed = rd.GetDateTime(2);
+                        ven.ganancia = rd.GetInt32(3);
+                        total = total + ven.ganancia;
+                        lis.Add(ven);
+                        i++;
+                    }
+                    dgVentas.ItemsSource = lis;
+                    txTotal.Text = ""+total;
+                    rd.Close();
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
+                }
             }
             else
                 MessageBox.Show("Las fechas están mal");

@@ -20,7 +20,7 @@ namespace Tamalito
             SqlConnection cnn;
             try
             {
-                cnn = new SqlConnection("Data Source=112SALAS28;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+                cnn = new SqlConnection("Data Source=112SALAS27;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
 
                 cnn.Open();
             }
