@@ -21,11 +21,14 @@ namespace Tamalito
     /// </summary>
     public partial class TomarOrden : Window
     {
-        List<String> carrito = new List<String>();
-        String txt = "";
-        
+        //ATRIBUTOS O VARIBALES GLOBALES:
+        List<ObjSelec> carrito = new List<ObjSelec>();
+        int precioTamal;
+        int precioAtole;
+        int subTotal = 0;
+        int total = 0;
 
-       
+        //DICCIONARIOS PARA SABER SI LOS BOTONES SE ENCUNETRAN ACTIVOS:
         Dictionary<String, Boolean> botonesActivos = new Dictionary<String, Boolean>()
         {
             ["verde"] = false,
@@ -37,6 +40,7 @@ namespace Tamalito
             ["fresa"] = false,
             ["chocolate"] = false
         };
+        //DICCIONARIOS PARA SABER LA CANTIDAD SELECCIONADA DE CADA PRODUCTO:
         Dictionary<String, int> cantSeleccionada = new Dictionary<String, int>()
         {
             ["verde"] = 0,
@@ -49,15 +53,17 @@ namespace Tamalito
             ["chocolate"] = 0
         };
 
-
+        //MÉTODO CONSTRUCTOR QUE INICIALIZA LOS COMPONENETES:
         public TomarOrden()
         {
             InitializeComponent();
         }
+
+        //MÉTODO PARA INICIALIZAR TODOS LOS COMPONENTES NECESARIOS AL CARGAR LA VENTANA:
         private void Ventana_Loaded(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i <= 10; i++)
-            {
+            //RELLENAR LOS COMBOBOXES DE LA CANTIDAD DE PRODUCTOS:
+            for (int i = 0; i <= 10; i++){
                 cbVerde.Items.Add(" " + i);
                 cbRojo.Items.Add(" " + i);
                 cbMole.Items.Add(" " + i);
@@ -66,7 +72,8 @@ namespace Tamalito
                 cbVainilla.Items.Add(" " + i);
                 cbFresa.Items.Add(" " + i);
                 cbChocolate.Items.Add(" " + i);
-            }
+            } 
+            //INDICAR EL SELECTED INDEX DE CADA COMBO BOX:
             cbVerde.SelectedIndex = 0;
             cbRojo.SelectedIndex = 0;
             cbMole.SelectedIndex = 0;
@@ -75,22 +82,54 @@ namespace Tamalito
             cbVainilla.SelectedIndex = 0;
             cbFresa.SelectedIndex = 0;
             cbChocolate.SelectedIndex = 0;
+
+            //OBTENER PRECIOS DE LA BASE DE DATOS;
+            SqlConnection con = Conexion.conectar();
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 costo FROM productos WHERE categoria='tamal'", con);
+            SqlDataReader rd = cmd.ExecuteReader();
+            rd.Read();
+            precioTamal = rd.GetInt32(0);
+            rd.Close();
+
+            SqlCommand cmd2 = new SqlCommand("SELECT TOP 1 costo FROM productos WHERE categoria='atole'", con);
+            SqlDataReader rd2 = cmd.ExecuteReader();
+            rd2.Read();
+            precioAtole = rd2.GetInt32(0);
+            rd2.Close();
+
+            con.Close();
         }
+
+        //MÉTODO PARA ACTUALIZAR LA LISTA
         public void actualizaLista()
         {
-            txt = "";
+            dgRecibo.ItemsSource = null;
+            carrito.Clear();
+            total = 0;
             foreach (var item in botonesActivos)
             {
-                //carrito.Clear();
                 if (item.Value)
                 {
-                    //carrito.Add(item.Key + "\t" + cantSeleccionada[item.Key] + "\t$" + (cantSeleccionada[item.Key]*12) );
-                    txt = txt + item.Key + "\t" + cantSeleccionada[item.Key] + "\t$" + (cantSeleccionada[item.Key] * 15) + "\n";
+                    if ( (item.Key).Equals("verde") || (item.Key).Equals("rojo") || (item.Key).Equals("mole") || (item.Key).Equals("dulce"))
+                        subTotal = cantSeleccionada[item.Key] * precioTamal;
+                    else
+                        subTotal = cantSeleccionada[item.Key] * precioAtole;
+
+                    ObjSelec ob = new ObjSelec();
+                    ob.producto = (item.Key).ToString();
+                    ob.cantidad = cantSeleccionada[item.Key];
+                    ob.costo = subTotal;
+                    carrito.Add( ob);
+
+                    total += subTotal;
                 }
             }
-            tbRecibo.Text = txt;
+            dgRecibo.ItemsSource = carrito;
+            lbTotal.Content = "$ " + total;
         }
-        private void BtCancelar_Click(object sender, RoutedEventArgs e)
+
+        //MÉTODO DEL BOTÓN REGRESAR:
+        private void BtRegresar_Click(object sender, RoutedEventArgs e)
         {
             if (App.Current.Properties["usuarioActivo"].Equals("Empleado")) {
                 Empleado main = new Empleado();
@@ -111,19 +150,42 @@ namespace Tamalito
             }
         }
 
-        
-
-        private void BtFresa_Click(object sender, RoutedEventArgs e)
-        {
-
+        //MÉTODOS PARA ACTUALIZAR LAS CANTIDADES ANTE UN CAMBIO EN LOS COMBOBOXES:
+        private void CbVerde_SelectionChanged(object sender, SelectionChangedEventArgs e){
+            cantSeleccionada["verde"] = int.Parse(cbVerde.SelectedItem.ToString());
         }
-        private void CbVerde_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CbRojo_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            cantSeleccionada["verde"]= int.Parse( cbVerde.SelectedItem.ToString() );
-            
+            cantSeleccionada["rojo"] = int.Parse(cbRojo.SelectedItem.ToString());
         }
-        private void BtVerde_Click(object sender, RoutedEventArgs e)
+        private void CbMole_SelectionChanged(object sender, RoutedEventArgs e)
         {
+            cantSeleccionada["mole"] = int.Parse(cbMole.SelectedItem.ToString());
+        }
+        private void CbDulce_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            cantSeleccionada["dulce"] = int.Parse(cbDulce.SelectedItem.ToString());
+        }
+        private void CbArroz_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cantSeleccionada["arroz"] = int.Parse(cbArroz.SelectedItem.ToString());
+        }
+        private void CbVainilla_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            cantSeleccionada["vainilla"] = int.Parse(cbVainilla.SelectedItem.ToString());
+        }
+        private void CbFresa_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            cantSeleccionada["fresa"] = int.Parse(cbFresa.SelectedItem.ToString());
+        }
+        private void CbChocolate_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            cantSeleccionada["chocolate"] = int.Parse(cbChocolate.SelectedItem.ToString());
+        }
+
+
+        //MÉTODOS PARA AGREGAR O QUITAR PRODUCTOS A LA LISTA AL PRESIONAR EL BOTON DE CADA PRODUCTO:
+        private void BtVerde_Click(object sender, RoutedEventArgs e){
             if (!botonesActivos["verde"])
             {
                 botonesActivos["verde"] = true;
@@ -138,19 +200,141 @@ namespace Tamalito
             }
             actualizaLista();
         }
-
         private void BtRojo_Click(object sender, RoutedEventArgs e)
         {
+            if (!botonesActivos["rojo"])
+            {
+                botonesActivos["rojo"] = true;
+                btRojo.BorderBrush = Brushes.Green;
 
+            }
+            else
+            {
+                botonesActivos["rojo"] = false;
+                btRojo.BorderBrush = null;
+
+            }
+            actualizaLista();
         }
-
         private void BtMole_Click(object sender, RoutedEventArgs e)
         {
+            if (!botonesActivos["mole"])
+            {
+                botonesActivos["mole"] = true;
+                btMole.BorderBrush = Brushes.Green;
 
+            }
+            else
+            {
+                botonesActivos["mole"] = false;
+                btMole.BorderBrush = null;
+
+            }
+            actualizaLista();
+        }
+        private void BtDulce_Click(object sender, RoutedEventArgs e)
+        {
+            if (!botonesActivos["dulce"])
+            {
+                botonesActivos["dulce"] = true;
+                btDulce.BorderBrush = Brushes.Green;
+
+            }
+            else
+            {
+                botonesActivos["dulce"] = false;
+                btDulce.BorderBrush = null;
+
+            }
+            actualizaLista();
         }
 
-        
+        private void BtVainilla_Click(object sender, RoutedEventArgs e)
+        {
+            if (!botonesActivos["vainilla"])
+            {
+                botonesActivos["vainilla"] = true;
+                btVainilla.BorderBrush = Brushes.Green;
+
+            }
+            else
+            {
+                botonesActivos["vainilla"] = false;
+                btVainilla.BorderBrush = null;
+
+            }
+            actualizaLista();
+        }
+        private void BtFresa_Click(object sender, RoutedEventArgs e)
+        {
+            if (!botonesActivos["fresa"])
+            {
+                botonesActivos["fresa"] = true;
+                btFresa.BorderBrush = Brushes.Green;
+
+            }
+            else
+            {
+                botonesActivos["fresa"] = false;
+                btFresa.BorderBrush = null;
+
+            }
+            actualizaLista();
+        }
+        private void BtChocolate_Click(object sender, RoutedEventArgs e)
+        {
+            if (!botonesActivos["chocolate"])
+            {
+                botonesActivos["chocolate"] = true;
+                btChocolate.BorderBrush = Brushes.Green;
+
+            }
+            else
+            {
+                botonesActivos["chocolate"] = false;
+                btChocolate.BorderBrush = null;
+
+            }
+            actualizaLista();
+        }
+
+        private void BtArroz_Click(object sender, RoutedEventArgs e)
+        {
+            if (!botonesActivos["arroz"])
+            {
+                botonesActivos["arroz"] = true;
+                btArroz.BorderBrush = Brushes.Green;
+
+            }
+            else
+            {
+                botonesActivos["arroz"] = false;
+                btArroz.BorderBrush = null;
+
+            }
+            actualizaLista();
+        }
+
+        private void BtConfirmar_Click(object sender, RoutedEventArgs e)
+        {/*
+            SqlConnection con = Conexion.conectar();
+            con.Open();
+            SqlCommand cmd = new SqlCommand(String.Format("UPDATE pedidos SET(idEmpleado) VALUES({0});", App.Current.Properties["idUsuarioActivo"]), con);
+            int res = cmd.ExecuteNonQuery();
+
+            //for each carrito
+            SqlCommand cmd2 = new SqlCommand(String.Format("UPDATE pedidosProductos SET(cantidad) VALUES({0});", cantSeleccionada["***"]), con);
+            int res2 = cmd.ExecuteNonQuery();
+            con.Close();
+            */
+        }
     }
 
+    //CLASE AUXILIAR PARA CREAR LA LISTA DE PRODUCTOS TEMPORAL QUE PROBABLEMENTE SERÁ COMPRADA:
+    public class ObjSelec{
+        public String producto { get; set; }
+        public int cantidad { get; set; }
+        public int costo { get; set; }
+    }
 
 }

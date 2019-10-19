@@ -75,5 +75,10 @@ namespace Tamalito
                 MessageBox.Show("Error");
             }
         }
+
+        private void TbApellidoMaterno_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

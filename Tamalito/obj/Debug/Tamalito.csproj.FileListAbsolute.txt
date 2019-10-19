@@ -63,7 +63,6 @@ C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\Gerente.g.cs
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\IniciarSesion.g.cs
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\MainWindow.g.cs
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\ModificarCostos.g.cs
-C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\PromoverEmpleado.g.cs
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\TomarOrden.g.cs
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\App.g.cs
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\Tamalito_MarkupCompile.cache
@@ -83,7 +82,6 @@ C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\Gerente.baml
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\IniciarSesion.baml
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\MainWindow.baml
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\ModificarCostos.baml
-C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\PromoverEmpleado.baml
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\TomarOrden.baml
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\Tamalito.g.resources
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\Tamalito.Properties.Resources.resources
@@ -109,3 +107,5 @@ C:\Users\AZATARAIL\Desktop\tamalito\Tamalito\obj\Debug\Tamalito.csproj.GenerateR
 C:\Users\AZATARAIL\Desktop\tamalito\Tamalito\obj\Debug\Tamalito.csproj.CoreCompileInputs.cache
 C:\Users\AZATARAIL\Desktop\tamalito\Tamalito\obj\Debug\ModificarPuesto.g.cs
 C:\Users\AZATARAIL\Desktop\tamalito\Tamalito\obj\Debug\ModificarPuesto.baml
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\ModificarPuesto.g.cs
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\ModificarPuesto.baml
