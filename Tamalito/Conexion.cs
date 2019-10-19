@@ -20,7 +20,15 @@ namespace Tamalito
             SqlConnection cnn;
             try
             {
+<<<<<<< HEAD
                 cnn = new SqlConnection("Data Source=112SALAS27;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+=======
+<<<<<<< HEAD
+                cnn = new SqlConnection("Data Source=112SALAS29;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+=======
+                cnn = new SqlConnection("Data Source=112SALAS28;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+>>>>>>> 541b3bec1a64130f74798e4e1d1e7f719b6394b1
+>>>>>>> e74bed707243d2ede5b8fa6a1d9068e94b64f524
 
                 cnn.Open();
             }
@@ -77,9 +85,13 @@ namespace Tamalito
                 rd = cmd.ExecuteReader();
                 if (rd.Read())
                     if (rd.GetByte(0).Equals(1))
+<<<<<<< HEAD
+                        res = true;
+=======
                         res = 1;
                     else
                         res = 0;
+>>>>>>> 541b3bec1a64130f74798e4e1d1e7f719b6394b1
                 con.Close();
                 rd.Close();
             }
