@@ -20,8 +20,20 @@ namespace Tamalito
             SqlConnection cnn;
             try
             {
+<<<<<<< HEAD
 
                 cnn = new SqlConnection("Data Source=localhost;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+=======
+<<<<<<< HEAD
+                cnn = new SqlConnection("Data Source=112SALAS27;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+=======
+<<<<<<< HEAD
+                cnn = new SqlConnection("Data Source=112SALAS29;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+=======
+                cnn = new SqlConnection("Data Source=112SALAS28;Initial Catalog=tamalito;User ID=sa;Password=sqladmin");
+>>>>>>> 541b3bec1a64130f74798e4e1d1e7f719b6394b1
+>>>>>>> e74bed707243d2ede5b8fa6a1d9068e94b64f524
+>>>>>>> 02c70c8a4acf5b6745562971b91934589c54ff9d
 
                 cnn.Open();
             }

@@ -25,13 +25,7 @@ namespace Tamalito
             InitializeComponent();
         }
 
-        private void BtCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            Dueño dueño;
-            dueño = new Dueño();
-            dueño.Show();
-            this.Close();
-        }
+        
 
         private void BtContinuar_Click(object sender, RoutedEventArgs e)
         {
@@ -72,6 +66,14 @@ namespace Tamalito
             {
                 MessageBox.Show("Error try catch");
             }
+        }
+
+        private void BtCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            Dueño dueño;
+            dueño = new Dueño();
+            dueño.Show();
+            this.Close();
         }
     }
 }

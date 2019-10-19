@@ -13,7 +13,7 @@
         <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="180,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <Label x:Name="lbNuevoPrecio" Content="Nuevo Precio" HorizontalAlignment="Left" Margin="43,174,0,0" VerticalAlignment="Top" Width="91"/>
         <TextBox x:Name="tbNuevoPrecio" HorizontalAlignment="Left" Height="26" Margin="180,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="43,228,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="43,228,0,0" VerticalAlignment="Top" Width="75" Click="BtCancelar_Click"/>
         <Button x:Name="btContinuar" Content="Continuar" HorizontalAlignment="Left" Margin="265,228,0,0" VerticalAlignment="Top" Width="75" Click="BtContinuar_Click"/>
         <Label x:Name="lbPrecioActual" Content="Precio Actual" HorizontalAlignment="Left" Margin="43,133,0,0" VerticalAlignment="Top" Width="84"/>
         <Button x:Name="btConsultar" Content="Consultar" HorizontalAlignment="Left" Margin="153,228,0,0" VerticalAlignment="Top" Width="75" Click="BtConsultar_Click"/>

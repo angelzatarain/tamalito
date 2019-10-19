@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tamalito"
         mc:Ignorable="d"
-        Title="ConsultarVentas" Height="348" Width="605">
+        Title="ConsultarVentas" Height="380.033" Width="605">
     <Grid>
         <Label x:Name="lbFechaInicio" Content="Fecha Inicio:" HorizontalAlignment="Left" Margin="31,28,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbFechaFinal" Content="Fecha Final:" HorizontalAlignment="Left" Margin="31,69,0,0" VerticalAlignment="Top"/>
@@ -21,8 +21,11 @@
         <Label x:Name="lbDia2" Content="Día" HorizontalAlignment="Left" Margin="432,69,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbDia1" HorizontalAlignment="Left" Margin="487,32,0,0" VerticalAlignment="Top" Width="50" Loaded="CbDia1_Loaded"/>
         <ComboBox x:Name="cbDia2" HorizontalAlignment="Left" Margin="487,73,0,0" VerticalAlignment="Top" Width="50" Loaded="CbDia2_Loaded"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="110,252,0,0" VerticalAlignment="Top" Width="75" Click="BtCancelar_Click"/>
-        <Button x:Name="btConsultar" Content="Consultar" HorizontalAlignment="Left" Margin="407,252,0,0" VerticalAlignment="Top" Width="75" Click="BtConsultar_Click"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="119,291,0,0" VerticalAlignment="Top" Width="75" Click="BtCancelar_Click"/>
+        <Button x:Name="btConsultar" Content="Consultar" HorizontalAlignment="Left" Margin="416,291,0,0" VerticalAlignment="Top" Width="75" Click="BtConsultar_Click"/>
+        <DataGrid x:Name="dgVentas" HorizontalAlignment="Left" Height="100" Margin="110,125,0,0" VerticalAlignment="Top" Width="409"/>
+        <Label x:Name="lbTotal" Content="Total:" HorizontalAlignment="Left" Margin="156,241,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txTotal" HorizontalAlignment="Left" Height="23" Margin="211,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
 
 
 

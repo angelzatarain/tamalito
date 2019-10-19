@@ -12,7 +12,11 @@ DEBUG;TRACE
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\App.xaml
 12-1720413155
 
+<<<<<<< HEAD
 21-924120354
+=======
+21-758242350
+>>>>>>> 02c70c8a4acf5b6745562971b91934589c54ff9d
 141183416626
 AltaEmpleado.xaml;AniadirInventario.xaml;BajaEmpleado.xaml;ConsultarVentas.xaml;Dueño.xaml;Empleado.xaml;Gerente.xaml;IniciarSesion.xaml;MainWindow.xaml;ModificarCostos.xaml;ModificarPuesto.xaml;TomarOrden.xaml;
 
