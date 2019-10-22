@@ -45,7 +45,7 @@ namespace Tamalito
             int res = 0;
             SqlConnection con;
             con = Conexion.conectar();
-            SqlCommand cmd = new SqlCommand(String.Format("insert into empleados (idEmpleado, nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia) values ({0}, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')", e.idEmpleado, e.nombre, e.apellidoP, e.apellidoM, e.fechaNac, e.sexo, e.direccion, e.puesto, e.contras), con);
+            SqlCommand cmd = new SqlCommand(String.Format("insert into empleados (nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')", e.nombre, e.apellidoP, e.apellidoM, e.fechaNac, e.sexo, e.direccion, e.puesto, e.contras), con);
             res = cmd.ExecuteNonQuery();
             con.Close();
             return res;

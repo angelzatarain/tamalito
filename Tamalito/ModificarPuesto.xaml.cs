@@ -49,7 +49,7 @@ namespace Tamalito
                     MessageBox.Show("No puedes modificar tu propio puesto");
                 }
                 else {
-                    int res = empleado.modificarPuesto(int.Parse(tbIdEmpleado.Text), tbNombre.Text, tbApellidoPaterno.Text, tbApellidoMaterno.Text, cbPuesto.SelectedIndex.ToString());
+                    int res = empleado.modificarPuesto(int.Parse(tbIdEmpleado.Text), tbNombre.Text, tbApellidoPaterno.Text, tbApellidoMaterno.Text, cbPuesto.SelectedValue.ToString());
                     if (res < 0)
                         MessageBox.Show("empleado no encontrado");
                     else

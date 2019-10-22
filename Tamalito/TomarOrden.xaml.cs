@@ -63,7 +63,7 @@ namespace Tamalito
         private void Ventana_Loaded(object sender, RoutedEventArgs e)
         {
             //RELLENAR LOS COMBOBOXES DE LA CANTIDAD DE PRODUCTOS:
-            for (int i = 0; i <= 10; i++){
+            for (int i = 1; i <= 10; i++){
                 cbVerde.Items.Add(" " + i);
                 cbRojo.Items.Add(" " + i);
                 cbMole.Items.Add(" " + i);
@@ -153,34 +153,35 @@ namespace Tamalito
         //MÉTODOS PARA ACTUALIZAR LAS CANTIDADES ANTE UN CAMBIO EN LOS COMBOBOXES:
         private void CbVerde_SelectionChanged(object sender, SelectionChangedEventArgs e){
             cantSeleccionada["verde"] = int.Parse(cbVerde.SelectedItem.ToString());
+            actualizaLista();
         }
-        private void CbRojo_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+        private void CbRojo_SelectionChanged(object sender, RoutedEventArgs e){
             cantSeleccionada["rojo"] = int.Parse(cbRojo.SelectedItem.ToString());
+            actualizaLista();
         }
-        private void CbMole_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+        private void CbMole_SelectionChanged(object sender, RoutedEventArgs e){
             cantSeleccionada["mole"] = int.Parse(cbMole.SelectedItem.ToString());
+            actualizaLista();
         }
-        private void CbDulce_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+        private void CbDulce_SelectionChanged(object sender, RoutedEventArgs e){
             cantSeleccionada["dulce"] = int.Parse(cbDulce.SelectedItem.ToString());
+            actualizaLista();
         }
-        private void CbArroz_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        private void CbArroz_SelectionChanged(object sender, SelectionChangedEventArgs e){
             cantSeleccionada["arroz"] = int.Parse(cbArroz.SelectedItem.ToString());
+            actualizaLista();
         }
-        private void CbVainilla_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+        private void CbVainilla_SelectionChanged(object sender, RoutedEventArgs e){
             cantSeleccionada["vainilla"] = int.Parse(cbVainilla.SelectedItem.ToString());
+            actualizaLista();
         }
-        private void CbFresa_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+        private void CbFresa_SelectionChanged(object sender, RoutedEventArgs e){
             cantSeleccionada["fresa"] = int.Parse(cbFresa.SelectedItem.ToString());
+            actualizaLista();
         }
-        private void CbChocolate_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+        private void CbChocolate_SelectionChanged(object sender, RoutedEventArgs e){
             cantSeleccionada["chocolate"] = int.Parse(cbChocolate.SelectedItem.ToString());
+            actualizaLista();
         }
 
 
@@ -316,17 +317,59 @@ namespace Tamalito
         }
 
         private void BtConfirmar_Click(object sender, RoutedEventArgs e)
-        {/*
+        {
+            //SE GUARDA EL ID DEL EMPLEADO ACTUAL EN UNA VARIABLE:
+            int idEmpleado = int.Parse ( App.Current.Properties["idUsuarioActivo"].ToString() );
+            //SE GENERA UNA NUEVA CONEXÓN:
             SqlConnection con = Conexion.conectar();
-            con.Open();
-            SqlCommand cmd = new SqlCommand(String.Format("UPDATE pedidos SET(idEmpleado) VALUES({0});", App.Current.Properties["idUsuarioActivo"]), con);
-            int res = cmd.ExecuteNonQuery();
+            SqlCommand cmd = new SqlCommand(String.Format("INSERT INTO pedidos(idEmpleado) VALUES({0});", idEmpleado), con);
+            if( cmd.ExecuteNonQuery() > -1){
+                SqlCommand cmd2 = new SqlCommand("SELECT TOP 1 * FROM pedidos ORDER BY idPedido DESC;", con);
+                SqlDataReader rd = cmd2.ExecuteReader();
+                int idPed = -1;
+                if (rd.Read())
+                    idPed = rd.GetInt32(0);
+                rd.Close();
 
-            //for each carrito
-            SqlCommand cmd2 = new SqlCommand(String.Format("UPDATE pedidosProductos SET(cantidad) VALUES({0});", cantSeleccionada["***"]), con);
-            int res2 = cmd.ExecuteNonQuery();
+                //for each carrito
+                SqlCommand cmd3, cmd4;
+                SqlDataReader rd3;
+                int res4 = 0;
+                int idProd = -1;
+                foreach (var item in carrito){
+                    cmd3 = new SqlCommand(String.Format("SELECT idProducto FROM productos WHERE nombre='{0}';",item.producto), con);
+                    rd3 = cmd3.ExecuteReader();
+                    if(rd3.Read())
+                        idProd = rd3.GetInt32(0);
+                    rd3.Close();
+                    cmd4 = new SqlCommand(String.Format("INSERT INTO pedidosProductos(idPedido, idProducto, cantidad) VALUES({0}, {1}, {2});", idPed, idProd, cantSeleccionada[item.producto]), con);
+                    res4 = cmd4.ExecuteNonQuery();
+                    if (res4 == -1){
+                        break;  
+                    }
+
+                }
+                if (res4 > -1)
+                {
+                    MessageBox.Show("Pedido realizado con éxito.");
+                    TomarOrden main = new TomarOrden();
+                    main.Show();
+                    this.Close();
+                }
+
+                else
+                    MessageBox.Show("Error para realizar pedido.");
+                
+
+
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+
             con.Close();
-            */
+
         }
     }
 

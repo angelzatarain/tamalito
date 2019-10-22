@@ -9,43 +9,43 @@
     <Grid x:Name="ventana" RenderTransformOrigin="0.497,0.498" Loaded="Ventana_Loaded">
         <Button x:Name="btConfirmar" Content="Confirmar compra " HorizontalAlignment="Left" Margin="380,632,0,0" VerticalAlignment="Top" Width="152" Height="40" FontSize="16" FontWeight="Bold" Click="BtConfirmar_Click">
         </Button>
-        <Button x:Name="btVerde" Content="" HorizontalAlignment="Left" Margin="89,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtVerde_Click">
+        <Button x:Name="btVerde" Content="" HorizontalAlignment="Left" Margin="89,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="8" BorderBrush="{x:Null}" Click="BtVerde_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/productos/tamales/verde.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="btRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="175,635,0,0" VerticalAlignment="Top" Width="82" Click="BtRegresar_Click" Height="40" FontSize="16" FontWeight="Bold"/>
-        <Button x:Name="btRojo" Content="" HorizontalAlignment="Left" Margin="247,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtRojo_Click">
+        <Button x:Name="btRojo" Content="" HorizontalAlignment="Left" Margin="247,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="8" BorderBrush="{x:Null}" Click="BtRojo_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/productos/tamales/rojo.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btMole" Content="" HorizontalAlignment="Left" Margin="408,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtMole_Click">
+        <Button x:Name="btMole" Content="" HorizontalAlignment="Left" Margin="408,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="8" BorderBrush="{x:Null}" Click="BtMole_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/productos/tamales/mole.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btDulce" Content="" HorizontalAlignment="Left" Margin="575,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtDulce_Click">
+        <Button x:Name="btDulce" Content="" HorizontalAlignment="Left" Margin="575,49,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="8" BorderBrush="{x:Null}" Click="BtDulce_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/productos/tamales/dulce.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btArroz" Content="" HorizontalAlignment="Left" Margin="93,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtArroz_Click">
+        <Button x:Name="btArroz" Content="" HorizontalAlignment="Left" Margin="93,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="8" BorderBrush="{x:Null}" Click="BtArroz_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/productos/atole/arroz.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btVainilla" Content="" HorizontalAlignment="Left" Margin="249,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtVainilla_Click">
+        <Button x:Name="btVainilla" Content="" HorizontalAlignment="Left" Margin="249,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="8" BorderBrush="{x:Null}" Click="BtVainilla_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/productos/atole/vainilla.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btFresa" Content="" HorizontalAlignment="Left" Margin="412,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtFresa_Click">
+        <Button x:Name="btFresa" Content="" HorizontalAlignment="Left" Margin="412,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="8" BorderBrush="{x:Null}" Click="BtFresa_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/productos/atole/fresa.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btChocolate" Content="" HorizontalAlignment="Left" Margin="579,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="4" BorderBrush="{x:Null}" Click="BtChocolate_Click">
+        <Button x:Name="btChocolate" Content="" HorizontalAlignment="Left" Margin="579,285,0,0" VerticalAlignment="Top" Width="124" Height="127" RenderTransformOrigin="1,1" Foreground="#FFF15151" BorderThickness="8" BorderBrush="{x:Null}" Click="BtChocolate_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/productos/atole/chocolate.jpg"/>
             </Button.Background>
@@ -58,14 +58,14 @@
         <Label x:Name="lbPrecioRojo" Content="$15" HorizontalAlignment="Left" Margin="287,17,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lbPrecioMole" Content="$15" HorizontalAlignment="Left" Margin="446,17,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lbPrecioDulce" Content="$15" HorizontalAlignment="Left" Margin="617,17,0,0" VerticalAlignment="Top" Height="38" Width="40" FontSize="16" FontWeight="Bold"/>
-        <ComboBox x:Name="cbVerde" HorizontalAlignment="Left" Margin="127,184,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
-        <ComboBox x:Name="cbRojo" HorizontalAlignment="Left" Margin="287,184,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbRojo_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
-        <ComboBox x:Name="cbMole" HorizontalAlignment="Left" Margin="442,184,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbMole_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" RenderTransformOrigin="0.427,0.5"/>
-        <ComboBox x:Name="cbDulce" HorizontalAlignment="Left" Margin="615,184,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbDulce_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
-        <ComboBox x:Name="cbArroz" HorizontalAlignment="Left" Margin="127,423,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbArroz_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
-        <ComboBox x:Name="cbVainilla" HorizontalAlignment="Left" Margin="287,423,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbVainilla_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
-        <ComboBox x:Name="cbFresa" HorizontalAlignment="Left" Margin="442,423,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbFresa_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" RenderTransformOrigin="0.427,0.5"/>
-        <ComboBox x:Name="cbChocolate" HorizontalAlignment="Left" Margin="615,423,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="CbChocolate_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbVerde" HorizontalAlignment="Left" Margin="127,184,0,0" VerticalAlignment="Top" Width="52" SelectionChanged="CbVerde_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbRojo" HorizontalAlignment="Left" Margin="287,184,0,0" VerticalAlignment="Top" Width="54" SelectionChanged="CbRojo_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbMole" HorizontalAlignment="Left" Margin="442,184,0,0" VerticalAlignment="Top" Width="56" SelectionChanged="CbMole_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" RenderTransformOrigin="0.427,0.5"/>
+        <ComboBox x:Name="cbDulce" HorizontalAlignment="Left" Margin="615,184,0,0" VerticalAlignment="Top" Width="55" SelectionChanged="CbDulce_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbArroz" HorizontalAlignment="Left" Margin="127,423,0,0" VerticalAlignment="Top" Width="52" SelectionChanged="CbArroz_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbVainilla" HorizontalAlignment="Left" Margin="287,423,0,0" VerticalAlignment="Top" Width="54" SelectionChanged="CbVainilla_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <ComboBox x:Name="cbFresa" HorizontalAlignment="Left" Margin="442,423,0,0" VerticalAlignment="Top" Width="56" SelectionChanged="CbFresa_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" RenderTransformOrigin="0.427,0.5"/>
+        <ComboBox x:Name="cbChocolate" HorizontalAlignment="Left" Margin="615,423,0,0" VerticalAlignment="Top" Width="55" SelectionChanged="CbChocolate_SelectionChanged" Height="31" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
         <DataGrid x:Name="dgRecibo" HorizontalAlignment="Left" Height="115" Margin="127,489,0,0" VerticalAlignment="Top" Width="423"/>
         <Label x:Name="txTotal" Content="Total:" HorizontalAlignment="Left" Margin="611,499,0,0" VerticalAlignment="Top" Height="42" Width="59" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lbTotal" Content="$ 0" HorizontalAlignment="Left" Margin="616,547,0,0" VerticalAlignment="Top" Height="44" Width="59" FontWeight="Bold" FontSize="18"/>

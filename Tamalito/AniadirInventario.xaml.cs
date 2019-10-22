@@ -28,26 +28,51 @@ namespace Tamalito
 
         private void BtConsultar_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                SqlConnection con = Conexion.conectar();
-                SqlCommand cmd = new SqlCommand(String.Format("select inventario from producto where idProducto={0}", int.Parse(tbIdProducto.Text)), con);
-                SqlDataReader rd;
-                rd = cmd.ExecuteReader();
-                if (rd.Read())
+            if (!tbIdProducto.Equals("") )
+                try
                 {
-                    lbInventarioActual1.Content = rd.GetString(0);
+                    SqlConnection con = Conexion.conectar();
+                    SqlCommand cmd = new SqlCommand(String.Format("SELECT productos.inventario FROM productos WHERE idProducto={0}", int.Parse(tbIdProducto.Text)), con); 
+                    SqlDataReader rd;
+                    rd = cmd.ExecuteReader();
+                    if (rd.Read())
+                    {
+                        lbInventarioActual1.Content = Convert.ToString(rd.GetInt32(0));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error en Query");
+                    }
+                    rd.Close();
+                    con.Close();
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error en Query");
+                    MessageBox.Show("Error: " + ex.Message);
                 }
-                rd.Close();
-                con.Close();
-            }
-            catch (Exception ex)
+            else if (!tbNombre.Equals(""))
             {
-                MessageBox.Show("Error try catch");
+                try
+                {
+                    SqlConnection con = Conexion.conectar();
+                    SqlCommand cmd = new SqlCommand(String.Format("SELECT productos.inventario FROM productos WHERE nombre='{0}'", tbNombre.Text), con);
+                    SqlDataReader rd;
+                    rd = cmd.ExecuteReader();
+                    if (rd.Read())
+                    {
+                        lbInventarioActual1.Content = rd.GetString(0);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error en Query");
+                    }
+                    rd.Close();
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error2: " + ex.Message);
+                }
             }
         }
 
@@ -56,14 +81,14 @@ namespace Tamalito
             try
             {
                 SqlConnection con = Conexion.conectar();
-                SqlCommand cmd = new SqlCommand(String.Format("insert into producto (inventario) values({0}) where idProducto={1}", int.Parse(tbNuevoInventario.Text) + int.Parse(lbInventarioActual1.Content.ToString()), int.Parse(tbIdProducto.Text)), con);
+                SqlCommand cmd = new SqlCommand(String.Format("UPDATE productos SET inventario= {0} WHERE idProducto={1}", (int.Parse(tbNuevoInventario.Text) + int.Parse(lbInventarioActual1.Content.ToString()) ), int.Parse(tbIdProducto.Text)), con);
                 if (cmd.ExecuteNonQuery() == -1)
                     MessageBox.Show("No se pudo cambiar el precio");
                 con.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error try catch");
+                MessageBox.Show("Error: "+ ex.Message);
             }
         }
 

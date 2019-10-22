@@ -43,8 +43,12 @@ namespace Tamalito
             fecha = "" + (cbAnio.SelectedIndex + 1960) + "-" + (cbMes.SelectedIndex + 1) + "-" + (cbDia.SelectedIndex + 1);
             Empleados emp = new Empleados(id, tbNombre.Text, tbApellidoPaterno.Text, tbApellidoMaterno.Text, fecha, sexo, tbDireccion.Text, "Gerente" , "" + id);
             res = emp.agregar(emp);
-            if (res > 0)
+            if (res > 0){
                 MessageBox.Show("Empleado dado de alta");
+                AltaEmpleado main = new AltaEmpleado();
+                main.Show();
+                this.Close();
+            }
             else
                 MessageBox.Show("No se pudo dar de alta");
         }
@@ -68,7 +72,7 @@ namespace Tamalito
                 cbDia.Items.Add(i);
         }
 
-        private void BtCancelar_Click(object sender, RoutedEventArgs e)
+        private void BtRegresar_Click(object sender, RoutedEventArgs e)
         {
             if (App.Current.Properties["usuarioActivo"].Equals("Gerente")) {
                     Gerente main = new Gerente();

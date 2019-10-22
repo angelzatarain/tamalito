@@ -24,7 +24,7 @@ namespace Tamalito
             InitializeComponent();
         }
 
-        private void BtCancelar_Click(object sender, RoutedEventArgs e)
+        private void BtRegresar_Click(object sender, RoutedEventArgs e)
         {
             if (App.Current.Properties["usuarioActivo"].Equals("Gerente"))
             {
