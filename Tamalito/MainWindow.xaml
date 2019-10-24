@@ -4,11 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tamalito"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Inicio" Height="300" Width="610">
+        Title="Inicio" Height="470" Width="625" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label x:Name="lbBienvenida" Content="Bienvenido a Tamalito" HorizontalAlignment="Left" Margin="65,40,0,0" VerticalAlignment="Top" Width="480" FontSize="48"/>
-        <Button x:Name="btInicioSesion" Content="Inciar Sesión" HorizontalAlignment="Left" Margin="210,174,0,0" VerticalAlignment="Top" Width="169" Height="45" Click="BtInicioSesion_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid>
+                <materialDesign:ColorZone Mode="PrimaryDark">
+
+                    <StackPanel HorizontalAlignment="Right">
+                        <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click">
+                            <materialDesign:PackIcon Kind="WindowClose"/>
+                        </Button>
+                    </StackPanel>
+                </materialDesign:ColorZone>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Label x:Name="lbBienvenida" Content="Bienvenido a Tamalito" HorizontalAlignment="Left" Margin="65,104,0,0" VerticalAlignment="Top" Width="480" FontSize="48"/>
+            <Button x:Name="btInicioSesion" Content="Inciar Sesión" HorizontalAlignment="Left" Margin="201,254,0,0" VerticalAlignment="Top" Width="169" Height="44" Click="BtInicioSesion_Click"/>
+        </Grid>
+
+
 
     </Grid>
 </Window>

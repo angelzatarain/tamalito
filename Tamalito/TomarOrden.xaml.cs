@@ -60,6 +60,8 @@ namespace Tamalito
         }
 
         //MÉTODO PARA INICIALIZAR TODOS LOS COMPONENTES NECESARIOS AL CARGAR LA VENTANA:
+
+        
         private void Ventana_Loaded(object sender, RoutedEventArgs e)
         {
             //RELLENAR LOS COMBOBOXES DE LA CANTIDAD DE PRODUCTOS:
@@ -74,6 +76,7 @@ namespace Tamalito
                 cbChocolate.Items.Add(" " + i);
             } 
             //INDICAR EL SELECTED INDEX DE CADA COMBO BOX:
+           
             cbVerde.SelectedIndex = 0;
             cbRojo.SelectedIndex = 0;
             cbMole.SelectedIndex = 0;
@@ -82,6 +85,7 @@ namespace Tamalito
             cbVainilla.SelectedIndex = 0;
             cbFresa.SelectedIndex = 0;
             cbChocolate.SelectedIndex = 0;
+            
 
             //OBTENER PRECIOS DE LA BASE DE DATOS;
             SqlConnection con = Conexion.conectar();
@@ -99,7 +103,7 @@ namespace Tamalito
 
             con.Close();
         }
-
+        
         //MÉTODO PARA ACTUALIZAR LA LISTA
         public void actualizaLista()
         {
@@ -371,6 +375,8 @@ namespace Tamalito
             con.Close();
 
         }
+
+
     }
 
     //CLASE AUXILIAR PARA CREAR LA LISTA DE PRODUCTOS TEMPORAL QUE PROBABLEMENTE SERÁ COMPRADA:

@@ -109,3 +109,17 @@ C:\Users\AZATARAIL\Desktop\tamalito\Tamalito\obj\Debug\ModificarPuesto.g.cs
 C:\Users\AZATARAIL\Desktop\tamalito\Tamalito\obj\Debug\ModificarPuesto.baml
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\ModificarPuesto.g.cs
 C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\ModificarPuesto.baml
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MaterialDesignColors.dll
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MaterialDesignColors.pdb
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\Tamalito.csproj.CopyComplete
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\ControlzEx.dll
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MahApps.Metro.dll
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\ControlzEx.pdb
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MahApps.Metro.pdb
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MahApps.Metro.xml
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\DHERNANDDE\Desktop\tamalito\Tamalito\obj\Debug\App.baml
