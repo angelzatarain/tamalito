@@ -58,7 +58,7 @@ cantidad INTEGER --cantidad de ese producto
 
 --EMPLEADOS--
 INSERT INTO empleados(nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia,activo) 
-VALUES('Angel', 'Zatarain', 'López', '1999-03-11', 'H', 'Cancún', 'Gerente', '1', 1);
+VALUES('Angel', 'Zatarain', 'López', '1999-03-11', 'H', 'Cancún', 'Empleado', '1', 1);
 
 INSERT INTO empleados( nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia,activo) 
 VALUES('José', 'Cortés', 'Gasca', '2019-12-10', 'H', 'CDMX', 'Gerente', '2', 1);

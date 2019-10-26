@@ -1,14 +1,40 @@
 ﻿<Window x:Class="Tamalito.Empleado"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tamalito"
         mc:Ignorable="d"
-        Title="Empleado"  Height="194" Width="280">
+        Title="Empleado"  Height="415" Width="420" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="btTomarOrden" Content="Tomar Orden" HorizontalAlignment="Left" Margin="46,37,0,0" VerticalAlignment="Top" Width="170" Height="30" Click="BtTomarOrden_Click"/>
-        <Button x:Name="btCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="46,95,0,0" VerticalAlignment="Top" Width="170" Height="30" Click="BtCerrarSesion_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid Background="#FF455A64">
+
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#DDFFFFFF" FontWeight="Bold" FontFamily="Segoe UI" >Empleado</Label>
+                <Button HorizontalAlignment="Right" Width="25" Height="Auto" Margin="0,9,16,17.6" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click">
+                    <materialDesign:PackIcon Kind="WindowClose"/>
+                </Button>
+
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Button x:Name="btTomarOrden" Content="Tomar Orden" HorizontalAlignment="Left" Margin="99,89,0,0" VerticalAlignment="Top" Width="213" Height="38" Click="BtTomarOrden_Click" FontSize="18"/>
+            <Button x:Name="btCerrarSesion" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="133,201,0,0" VerticalAlignment="Top" Width="155" Height="40" Click="BtCerrarSesion_Click" FontSize="18"/>
+        </Grid>
 
     </Grid>
 </Window>

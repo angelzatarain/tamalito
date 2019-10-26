@@ -122,13 +122,13 @@ namespace Tamalito
             if (res)
             {
                 String fechaIni, fechaFin;
-                fechaIni = "" + (cbAnio1.SelectedIndex + 2000) + "-" + (cbMes1.SelectedIndex + 1) + "-" + (cbDia1.SelectedIndex + 1) + "";
-                fechaFin = "" + (cbAnio2.SelectedIndex + 2000) + "-" + (cbMes2.SelectedIndex + 1) + "-" + (cbDia2.SelectedIndex + 1) + "";
+                fechaIni = "" + (cbAnio1.SelectedIndex + 2000) + "-" + (cbMes1.SelectedIndex + 1) + "-" + (cbDia1.SelectedIndex + 1) + " 00:00:00.000";
+                fechaFin = "" + (cbAnio2.SelectedIndex + 2000) + "-" + (cbMes2.SelectedIndex + 1) + "-" + (cbDia2.SelectedIndex + 1) + " 23:59:59.000";
                 try
                 {
                     SqlConnection con = Conexion.conectar();
-                    SqlCommand cmd = new SqlCommand(String.Format("select pedidosProductos.idPedido, pedidosProductos.idProducto, pedidos.fecha, pedidosProductos.cantidad*productos.costo as Ganancia from productos," +
-                        " pedidosProductos, pedidos where productos.idProducto = pedidosProductos.idProducto and pedidosProductos.idPedido = pedidos.idPedido and fecha between '{0}' and '{1}'", fechaIni, fechaFin), con);
+                    SqlCommand cmd = new SqlCommand(String.Format("select pedidosProductos.idPedido, pedidosProductos.idProducto, pedidos.fechaHora, pedidosProductos.cantidad*productos.costo as Ganancia from productos," +
+                        " pedidosProductos, pedidos where productos.idProducto = pedidosProductos.idProducto and pedidosProductos.idPedido = pedidos.idPedido and fechaHora between '{0}' and '{1}'", fechaIni, fechaFin), con);
                     SqlDataReader rd;
                     rd = cmd.ExecuteReader();
                     int total = 0;
@@ -147,17 +147,27 @@ namespace Tamalito
                         i++;
                     }
                     dgVentas.ItemsSource = lis;
-                    txTotal.Text = ""+total;
+                    txTotal.Text = "$ "+total;
                     rd.Close();
                     con.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("" + ex);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
             else
                 MessageBox.Show("Las fechas están mal");
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

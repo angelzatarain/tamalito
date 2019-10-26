@@ -1,23 +1,51 @@
 ﻿<Window x:Class="Tamalito.PromoverEmpleado"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tamalito"
         mc:Ignorable="d"
-        Title="ModificarPuesto" Height="360" Width="410">
+        Title="ModificarPuesto" Height="415" Width="420" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label x:Name="lbIdEmpleado" Content="Id Empleado" HorizontalAlignment="Left" Margin="43,45,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbNombre" Content="Nombre" HorizontalAlignment="Left" Margin="43,87,0,0" VerticalAlignment="Top" Width="76"/>
-        <Label x:Name="lbApellidoPaterno" Content="Apellido Paterno" HorizontalAlignment="Left" Margin="43,126,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbApellidoMaterno" Content="Apellido Materno&#xD;&#xA;" HorizontalAlignment="Left" Margin="43,167,0,0" VerticalAlignment="Top" Width="109" Height="26"/>
-        <TextBox x:Name="tbIdEmpleado" HorizontalAlignment="Left" Height="23" Margin="180,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="180,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="tbApellidoPaterno" HorizontalAlignment="Left" Height="23" Margin="180,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="tbApellidoMaterno" HorizontalAlignment="Left" Height="23" Margin="180,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <Label x:Name="lbPuesto" Content="Puesto" HorizontalAlignment="Left" Margin="43,211,0,0" VerticalAlignment="Top" Width="76"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="66,266,0,0" VerticalAlignment="Top" Width="86" Click="BtCancelar_Click"/>
-        <Button x:Name="btContinuar" Content="Continuar" HorizontalAlignment="Left" Margin="230,266,0,0" VerticalAlignment="Top" Width="100" Click="BtContinuar_Click"/>
-        <ComboBox x:Name="cbPuesto" HorizontalAlignment="Left" Margin="180,211,0,0" VerticalAlignment="Top" Width="160" Height="26" Loaded="CbPuesto_Loaded_1"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid Background="#FF455A64">
+                <Button HorizontalAlignment="Left" Width="32" Height="32" Margin="9 0 0 0" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="BtCancelar_Click" >
+                    <materialDesign:PackIcon Kind="ArrowBack"/>
+                </Button>
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#DDFFFFFF" FontWeight="Bold" FontFamily="Segoe UI" >Modificar puesto</Label>
+                <Button HorizontalAlignment="Right" Width="32" Height="32" Margin="0 0 9 0" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click">
+                    <materialDesign:PackIcon Kind="WindowClose"/>
+                </Button>
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+
+            <Label x:Name="lbIdEmpleado" Content="Id Empleado" HorizontalAlignment="Left" Margin="43,22,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <Label x:Name="lbNombre" Content="Nombre" HorizontalAlignment="Left" Margin="43,71,0,0" VerticalAlignment="Top" Width="76" FontSize="16"/>
+            <Label x:Name="lbApellidoPaterno" Content="Apellido Paterno" HorizontalAlignment="Left" Margin="43,123,0,0" VerticalAlignment="Top" FontSize="16" Width="142"/>
+            <Label x:Name="lbApellidoMaterno" Content="Apellido Materno&#xD;&#xA;" HorizontalAlignment="Left" Margin="43,172,0,0" VerticalAlignment="Top" Width="142" Height="26" FontSize="16"/>
+            <TextBox x:Name="tbIdEmpleado" HorizontalAlignment="Left" Height="37" Margin="201,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="16"/>
+            <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="38" Margin="201,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="16"/>
+            <TextBox x:Name="tbApellidoPaterno" HorizontalAlignment="Left" Height="38" Margin="201,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="16"/>
+            <TextBox x:Name="tbApellidoMaterno" HorizontalAlignment="Left" Height="36" Margin="201,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="16"/>
+            <Label x:Name="lbPuesto" Content="Nuevo puesto" HorizontalAlignment="Left" Margin="43,233,0,0" VerticalAlignment="Top" Width="117" FontSize="16"/>
+            <Button x:Name="btContinuar" Content="Modificar" HorizontalAlignment="Left" Margin="140,300,0,0" VerticalAlignment="Top" Width="120" Click="BtContinuar_Click"/>
+            <ComboBox x:Name="cbPuesto" HorizontalAlignment="Left" Margin="201,225,0,0" VerticalAlignment="Top" Width="159" Height="34" Loaded="CbPuesto_Loaded_1" FontSize="16"/>
+        </Grid>
     </Grid>
 </Window>

@@ -15,10 +15,10 @@
 
         <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <Grid>
-                <materialDesign:ColorZone Mode="PrimaryDark">
+                <materialDesign:ColorZone Mode="PrimaryDark" Height="50" Margin="0,0,-0.2,-19.6">
 
-                    <StackPanel HorizontalAlignment="Right">
-                        <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click">
+                    <StackPanel HorizontalAlignment="Right" Margin="0 10 10 0">
+                        <Button Width="32" Height="32" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click">
                             <materialDesign:PackIcon Kind="WindowClose"/>
                         </Button>
                     </StackPanel>
@@ -27,8 +27,12 @@
         </Border>
 
         <Grid Grid.Row="1">
-            <Label x:Name="lbBienvenida" Content="Bienvenido a Tamalito" HorizontalAlignment="Left" Margin="65,104,0,0" VerticalAlignment="Top" Width="480" FontSize="48"/>
-            <Button x:Name="btInicioSesion" Content="Inciar Sesión" HorizontalAlignment="Left" Margin="201,254,0,0" VerticalAlignment="Top" Width="169" Height="44" Click="BtInicioSesion_Click"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="621*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lbBienvenida" Content="Bienvenido a Tamalito" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="72,95,68.708,0" Width="480" FontSize="44" Foreground="#FF607D8B" FontWeight="Bold"/>
+            <Button x:Name="btInicioSesion" Content="Comenzar" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="229,261,232.708,131" Width="159" Height="48" Click="BtInicioSesion_Click" FontSize="22"/>
         </Grid>
 
 

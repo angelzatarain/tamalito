@@ -1,33 +1,56 @@
 ﻿<Window x:Class="Tamalito.ConsultarVentas"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tamalito"
         mc:Ignorable="d"
-        Title="ConsultarVentas" Height="380.033" Width="605">
-    <Grid>
-        <Label x:Name="lbFechaInicio" Content="Fecha Inicio:" HorizontalAlignment="Left" Margin="31,28,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbFechaFinal" Content="Fecha Final:" HorizontalAlignment="Left" Margin="31,69,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbAnio1" Content="Año" HorizontalAlignment="Left" Margin="129,28,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbAnio2" Content="Año" HorizontalAlignment="Left" Margin="129,69,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbAnio1" HorizontalAlignment="Left" Margin="181,32,0,0" VerticalAlignment="Top" Width="70" Loaded="CbAnio1_Loaded"/>
-        <ComboBox x:Name="cbAnio2" HorizontalAlignment="Left" Margin="181,73,0,0" VerticalAlignment="Top" Width="70" Loaded="CbAnio2_Loaded"/>
-        <Label x:Name="lbMes1" Content="Mes" HorizontalAlignment="Left" Margin="278,28,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbMes2" Content="Mes" HorizontalAlignment="Left" Margin="278,69,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbMes1" HorizontalAlignment="Left" Margin="332,32,0,0" VerticalAlignment="Top" Width="70" Loaded="CbMes1_Loaded"/>
-        <ComboBox x:Name="cbMes2" HorizontalAlignment="Left" Margin="332,73,0,0" VerticalAlignment="Top" Width="70" Loaded="CbMes2_Loaded"/>
-        <Label x:Name="lbDia1" Content="Día" HorizontalAlignment="Left" Margin="432,28,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbDia2" Content="Día" HorizontalAlignment="Left" Margin="432,69,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbDia1" HorizontalAlignment="Left" Margin="487,32,0,0" VerticalAlignment="Top" Width="50" Loaded="CbDia1_Loaded"/>
-        <ComboBox x:Name="cbDia2" HorizontalAlignment="Left" Margin="487,73,0,0" VerticalAlignment="Top" Width="50" Loaded="CbDia2_Loaded"/>
-        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="119,291,0,0" VerticalAlignment="Top" Width="75" Click="BtCancelar_Click"/>
-        <Button x:Name="btConsultar" Content="Consultar" HorizontalAlignment="Left" Margin="416,291,0,0" VerticalAlignment="Top" Width="75" Click="BtConsultar_Click"/>
-        <DataGrid x:Name="dgVentas" HorizontalAlignment="Left" Height="100" Margin="110,125,0,0" VerticalAlignment="Top" Width="409"/>
-        <Label x:Name="lbTotal" Content="Total:" HorizontalAlignment="Left" Margin="156,241,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txTotal" HorizontalAlignment="Left" Height="23" Margin="211,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        Title="ConsultarVentas" Height="589.48" Width="754.912" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    <Grid Margin="0,0,0.2,0.6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid Background="#FF455A64">
+                <Button HorizontalAlignment="Left" Width="32" Height="32" Margin="9 0 0 0" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="BtCancelar_Click" >
+                    <materialDesign:PackIcon Kind="ArrowBack"/>
+                </Button>
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#DDFFFFFF" FontWeight="Bold" FontFamily="Segoe UI" >Consulta de ventas</Label>
+                <Button HorizontalAlignment="Right" Width="32" Height="32" Margin="0 0 9 0" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click">
+                    <materialDesign:PackIcon Kind="WindowClose"/>
+                </Button>
 
+            </Grid>
+        </Border>
+
+        <Grid Margin="0,0.4,0,0.8" Grid.Row="1">
+            <Label x:Name="lbFechaInicio" Content="Fecha inicio:" HorizontalAlignment="Left" Margin="37,24,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="103"/>
+            <Label x:Name="lbFechaFinal" Content="Fecha final:" HorizontalAlignment="Left" Margin="37,65,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="103"/>
+            <Label x:Name="lbAnio1" Content="Año" HorizontalAlignment="Left" Margin="145,24,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="45"/>
+            <Label x:Name="lbAnio2" Content="Año" HorizontalAlignment="Left" Margin="145,65,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="45"/>
+            <ComboBox x:Name="cbAnio1" HorizontalAlignment="Left" Margin="210,28,0,0" VerticalAlignment="Top" Width="70" Loaded="CbAnio1_Loaded" FontWeight="Bold"/>
+            <ComboBox x:Name="cbAnio2" HorizontalAlignment="Left" Margin="210,69,0,0" VerticalAlignment="Top" Width="70" Loaded="CbAnio2_Loaded" FontWeight="Bold"/>
+            <Label x:Name="lbMes1" Content="Mes" HorizontalAlignment="Left" Margin="303,24,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="44"/>
+            <Label x:Name="lbMes2" Content="Mes" HorizontalAlignment="Left" Margin="303,65,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="44"/>
+            <ComboBox x:Name="cbMes1" HorizontalAlignment="Left" Margin="361,28,0,0" VerticalAlignment="Top" Width="70" Loaded="CbMes1_Loaded" FontWeight="Bold"/>
+            <ComboBox x:Name="cbMes2" HorizontalAlignment="Left" Margin="361,69,0,0" VerticalAlignment="Top" Width="70" Loaded="CbMes2_Loaded" FontWeight="Bold"/>
+            <Label x:Name="lbDia1" Content="Día" HorizontalAlignment="Left" Margin="458,24,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="38"/>
+            <Label x:Name="lbDia2" Content="Día" HorizontalAlignment="Left" Margin="458,65,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="38"/>
+            <ComboBox x:Name="cbDia1" HorizontalAlignment="Left" Margin="516,28,0,0" VerticalAlignment="Top" Width="50" Loaded="CbDia1_Loaded" FontWeight="Bold"/>
+            <ComboBox x:Name="cbDia2" HorizontalAlignment="Left" Margin="516,69,0,0" VerticalAlignment="Top" Width="50" Loaded="CbDia2_Loaded" FontWeight="Bold"/>
+            <Button x:Name="btConsultar" Content="Consultar" HorizontalAlignment="Left" Margin="609,45,0,0" VerticalAlignment="Top" Width="109" Click="BtConsultar_Click" Height="38" FontWeight="Bold" FontSize="16"/>
+            <DataGrid x:Name="dgVentas" HorizontalAlignment="Left" Height="324" Margin="84,121,0,0" VerticalAlignment="Top" Width="572" FontWeight="Bold"/>
+            <Label x:Name="lbTotal" Content="Total:" HorizontalAlignment="Left" Margin="266,477,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Width="62"/>
+            <TextBox x:Name="txTotal" HorizontalAlignment="Left" Height="33" Margin="362,473,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="129" IsEnabled="False" FontSize="18" FontWeight="Bold"/>
+
+        </Grid>
 
     </Grid>
 </Window>

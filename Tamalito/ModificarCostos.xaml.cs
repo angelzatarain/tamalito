@@ -32,14 +32,17 @@ namespace Tamalito
             try
             {
                 SqlConnection con = Conexion.conectar();
-                SqlCommand cmd = new SqlCommand(String.Format("insert into producto (costo) values({0}) where idProducto={1}", int.Parse(tbNuevoPrecio.Text), int.Parse(tbIdProducto.Text)), con);
+                SqlCommand cmd = new SqlCommand(String.Format("UPDATE productos SET costo={0} where idProducto={1}", int.Parse(tbNuevoPrecio.Text), int.Parse(tbIdProducto.Text)), con);
                 if (cmd.ExecuteNonQuery() == -1)
                     MessageBox.Show("No se pudo cambiar el precio");
                 con.Close();
+                MessageBox.Show("Precio actualizado.");
+                lbPrecioActual1.Content = tbNuevoPrecio.Text;
+                tbNuevoPrecio.Text = "";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error try catch");
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -48,12 +51,12 @@ namespace Tamalito
             try
             {
                 SqlConnection con = Conexion.conectar();
-                SqlCommand cmd = new SqlCommand(String.Format("select costo from producto where idProducto={0}", int.Parse(tbIdProducto.Text)), con);
+                SqlCommand cmd = new SqlCommand(String.Format("select costo from productos where idProducto={0}", int.Parse(tbIdProducto.Text)), con);
                 SqlDataReader rd;
                 rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
-                    lbPrecioActual1.Content = rd.GetString(0);
+                    lbPrecioActual1.Content = Convert.ToString( rd.GetInt32(0) );
                 }
                 else
                 {
@@ -64,7 +67,7 @@ namespace Tamalito
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error try catch");
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -74,6 +77,16 @@ namespace Tamalito
             dueño = new Dueño();
             dueño.Show();
             this.Close();
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

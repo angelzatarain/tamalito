@@ -25,10 +25,8 @@ namespace Tamalito
 
         }
 
-
-        public Empleados(int idEmpleado, String nombre, String apellidoP, String apellidoM, String fechaNac, char sexo, String direccion, String puesto, String contras)
+        public Empleados(String nombre, String apellidoP, String apellidoM, String fechaNac, char sexo, String direccion, String puesto)
         {
-            this.idEmpleado = idEmpleado;
             this.nombre = nombre;
             this.apellidoP = apellidoP;
             this.apellidoM = apellidoM;
@@ -36,16 +34,23 @@ namespace Tamalito
             this.sexo = sexo;
             this.direccion = direccion;
             this.puesto = puesto;
-            this.contras = contras;
-
         }
 
         public int agregar(Empleados e)
         {
+            int contra = 0;
+            SqlConnection c = Conexion.conectar();
+            SqlCommand q = new SqlCommand("SELECT TOP(1) empleados.idEmpleado FROM empleados ORDER BY empleados.idEmpleado DESC;", c);
+            SqlDataReader lee = q.ExecuteReader();
+            if (lee.Read())
+                contra = lee.GetInt32(0) + 1;
+            lee.Close();
+            c.Close();
+
             int res = 0;
             SqlConnection con;
             con = Conexion.conectar();
-            SqlCommand cmd = new SqlCommand(String.Format("insert into empleados (nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')", e.nombre, e.apellidoP, e.apellidoM, e.fechaNac, e.sexo, e.direccion, e.puesto, e.contras), con);
+            SqlCommand cmd = new SqlCommand(String.Format("insert into empleados (nombre, apellidoP, apellidoM, fechaNac, sexo, direccion, puesto, contrasenia, activo) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', 1)", e.nombre, e.apellidoP, e.apellidoM, e.fechaNac, e.sexo, e.direccion, e.puesto, contra), con);
             res = cmd.ExecuteNonQuery();
             con.Close();
             return res;

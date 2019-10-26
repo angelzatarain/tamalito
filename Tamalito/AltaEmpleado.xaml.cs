@@ -37,11 +37,8 @@ namespace Tamalito
                 else
                     sexo = 'O';
             }
-            id = 5;
-            String fecha;
-
-            fecha = "" + (cbAnio.SelectedIndex + 1960) + "-" + (cbMes.SelectedIndex + 1) + "-" + (cbDia.SelectedIndex + 1);
-            Empleados emp = new Empleados(id, tbNombre.Text, tbApellidoPaterno.Text, tbApellidoMaterno.Text, fecha, sexo, tbDireccion.Text, "Gerente" , "" + id);
+            String fecha = "" + (cbAnio.SelectedIndex + 1960) + "-" + (cbMes.SelectedIndex + 1) + "-" + (cbDia.SelectedIndex + 1);
+            Empleados emp = new Empleados(tbNombre.Text, tbApellidoPaterno.Text, tbApellidoMaterno.Text, fecha, sexo, tbDireccion.Text, (cbPuesto.Text).ToString());
             res = emp.agregar(emp);
             if (res > 0){
                 MessageBox.Show("Empleado dado de alta");
@@ -85,6 +82,16 @@ namespace Tamalito
                     main.Show();
                     this.Close();
                 }
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
