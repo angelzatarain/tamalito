@@ -28,6 +28,7 @@ correo VARCHAR(30),
 nombre VARCHAR(30),
 apellidoP VARCHAR(30),
 apellidoM VARCHAR(30),
+contra VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE pedidos(
