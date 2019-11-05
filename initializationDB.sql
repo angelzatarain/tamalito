@@ -72,9 +72,9 @@ INSERT INTO telefonos(idEmpleado, telefono) VALUES(2, 55549999);
 INSERT INTO telefonos(idEmpleado, telefono) VALUES(3, 55567888);
 
 --CLIENTES--
-INSERT INTO clientes(numTarjeta, correo, nombre, apellidoP, apellidoM) VALUES( '55658932', 'cliente1@gmail.com', 'Juan', 'Gómez', 'Peralta');
-INSERT INTO clientes(numTarjeta, correo, nombre, apellidoP, apellidoM) VALUES( '55677733', 'cliente2@gmail.com', 'Paco', 'Pérez', 'Lenovos');
-INSERT INTO clientes(numTarjeta, correo, nombre, apellidoP, apellidoM) VALUES( '55999988', 'cliente3@gmail.com', 'Luis', 'Casas', 'Bonitas');
+INSERT INTO clientes(numTarjeta, correo, nombre, apellidoP, apellidoM, contra) VALUES( '55658932', 'cliente1@gmail.com', 'Juan', 'Gómez', 'Peralta', '1');
+INSERT INTO clientes(numTarjeta, correo, nombre, apellidoP, apellidoM, contra) VALUES( '55677733', 'cliente2@gmail.com', 'Paco', 'Pérez', 'Lenovos', '2');
+INSERT INTO clientes(numTarjeta, correo, nombre, apellidoP, apellidoM, contra) VALUES( '55999988', 'cliente3@gmail.com', 'Luis', 'Casas', 'Bonitas', '3');
 
 --PRODUCTOS--
 --TAMALES--
